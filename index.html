@@ -3,101 +3,902 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Créer ma leçon MAHG</title>
+  <title>Outil MAHG – Assignation</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; }
-    label { font-weight: bold; display: block; margin-top: 20px; }
-    select, input[type="text"] { width: 100%; margin-bottom: 5px; }
-    #zoneMessage { border: 1px solid #ccc; padding: 15px; margin-top: 30px; background: #f9f9f9; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+    .bloc {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    select, input[type=text] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    .lien {
+      margin-top: 5px;
+    }
+    #zoneMessage {
+      background: #f4f4f4;
+      padding: 15px;
+      border: 1px solid #ccc;
+      white-space: pre-wrap;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Créer ma leçon MAHG</h1>
+<h1>Assignation d’exercices – MAHG</h1>
 
-  <label>Choisir une leçon</label>
+<h2>1. Sélection de la leçon</h2>
+<div class="bloc">
+  <label>Choisissez une leçon :</label>
   <select id="selectLecon" onchange="updateAll()">
-    <option value="">Sélectionner une leçon</option>
+    <option value="">-- Sélectionner une leçon --</option>
     <option value="https://media.publicationsports.com/509/1f063ee3-1665-6c68-a685-0242ac120003">Plan EM - MAHG 1 - Leçon 1</option>
-    <option value="https://media.publicationsports.com/509/1f063ee5-8296-634a-a0b3-0242ac120003">Plan EM - MAHG 1 - Leçon 2</option>
-    <option value="https://media.publicationsports.com/509/1f063ee6-30a1-6c50-921a-0242ac120003">Plan EM - MAHG 1 - Leçon 3</option>
-    <option value="https://media.publicationsports.com/509/1f063ee6-c8bb-6004-ab64-0242ac120003">Plan EM - MAHG 1 - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063ee5-8296-634a-a0b3-0242ac120003">Plan EM - MAHG 1 - Leçon 2</option>
+<option value="https://media.publicationsports.com/509/1f063ee6-30a1-6c50-921a-0242ac120003">Plan EM - MAHG 1 - Leçon 3</option>
+<option value="https://media.publicationsports.com/509/1f063ee6-c8bb-6004-ab64-0242ac120003">Plan EM - MAHG 1 - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063ee7-8d65-6c4c-8d35-0242ac120003">Plan EM - MAHG 1 - Leçon 5</option>
+<option value="https://media.publicationsports.com/509/1f063ee8-209a-6102-ba5e-0242ac120003">Plan EM - MAHG 1 - Leçon 6</option>
+<option value="https://media.publicationsports.com/509/1f063ee9-1b87-60b0-a681-0242ac120003">Plan EM - MAHG 1 - Leçon 7</option>
+<option value="https://media.publicationsports.com/509/1f063ee9-bb8a-6904-806a-0242ac120003">Plan EM - MAHG 1 - Leçon 8</option>
+<option value="https://media.publicationsports.com/509/1f063eea-4c18-6d22-ae69-0242ac120003">Plan EM - MAHG 1 - Leçon 9</option>
+<option value="https://media.publicationsports.com/509/1f063eea-c6ab-6d5a-8981-0242ac120003">Plan EM - MAHG 1 - Leçon 10</option>
+<option value="https://media.publicationsports.com/509/1f063eef-81d1-6afe-a2a8-0242ac120003">Plan EM - MAHG 1 - Leçon 11</option>
+<option value="https://media.publicationsports.com/509/1f063ef2-1b57-62a8-a25f-0242ac120003">Plan EM - MAHG 1 - Leçon 12</option>
+<option value="https://media.publicationsports.com/509/1f063ef3-4504-6d52-b130-0242ac120003">Plan EM - MAHG 1 - Leçon 13</option>
+<option value="https://media.publicationsports.com/509/1f063ef3-c9e9-6176-8573-0242ac120003">Plan EM - MAHG 1 - Leçon 14</option>
+<option value="https://media.publicationsports.com/509/1f063ef4-4cc2-680e-9ffa-0242ac120003">Plan EM - MAHG 1 - Leçon 15</option>
+<option value="https://media.publicationsports.com/509/1f063ef4-caa9-6c5e-82ff-0242ac120003">Plan EM - MAHG 1 - Leçon 16</option>
+<option value="https://media.publicationsports.com/509/1f063ef5-4f4e-6928-8cb8-0242ac120003">Plan EM - MAHG 1 - Leçon 17</option>
+<option value="https://media.publicationsports.com/509/1f063ef5-e1a5-6c0e-9c6c-0242ac120003">Plan EM - MAHG 1 - Leçon 18</option>
+<option value="https://media.publicationsports.com/509/1f063ef6-95b0-67f8-b0f1-0242ac120003">Plan EM - MAHG 1 - Leçon 19</option>
+<option value="https://media.publicationsports.com/509/1f063ef7-4420-68ec-addb-0242ac120003">Plan EM - MAHG 1 - Leçon 20</option>
+<option value="https://media.publicationsports.com/509/1f063ef7-b22f-6ab8-8219-0242ac120003">Plan EM - MAHG 1 - Leçon 21</option>
+<option value="https://media.publicationsports.com/509/1f063ef8-3075-6cce-9b21-0242ac120003">Plan EM - MAHG 1 - Leçon 22</option>
+<option value="https://media.publicationsports.com/509/1f063f01-6da7-645e-9cc4-0242ac120003">Plan EM - MAHG 2 - Leçon 1</option>
+<option value="https://media.publicationsports.com/509/1f063f02-4623-6b52-b0fc-0242ac120003">Plan EM - MAHG 2 - Leçon 2</option>
+<option value="https://media.publicationsports.com/509/1f063f02-f168-6ab2-a936-0242ac120003">Plan EM - MAHG 2 - Leçon 3</option>
+<option value="https://media.publicationsports.com/509/1f063f03-7ba0-6e28-bfe5-0242ac120003">Plan EM - MAHG 2 - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063f04-22a7-63f2-ae0b-0242ac120003">Plan EM - MAHG 2 - Leçon 5</option>
+<option value="https://media.publicationsports.com/509/1f063f04-d5fc-6aec-ae54-0242ac120003">Plan EM - MAHG 2 - Leçon 6</option>
+<option value="https://media.publicationsports.com/509/1f063f05-897f-64d4-be39-0242ac120003">Plan EM - MAHG 2 - Leçon 7</option>
+<option value="https://media.publicationsports.com/509/1f063f06-22c3-6122-91b1-0242ac120003">Plan EM - MAHG 2 - Leçon 8</option>
+<option value="https://media.publicationsports.com/509/1f063f06-a533-6a9e-99c8-0242ac120003">Plan EM - MAHG 2 - Leçon 9</option>
+<option value="https://media.publicationsports.com/509/1f063f07-4586-6e06-b612-0242ac120003">Plan EM - MAHG 2 - Leçon 10</option>
+<option value="https://media.publicationsports.com/509/1f063f07-c593-6a72-9bcb-0242ac120003">Plan EM - MAHG 2 - Leçon 11</option>
+<option value="https://media.publicationsports.com/509/1f063f0f-7665-665a-8045-0242ac120003">Plan EM - MAHG 2 - Leçon 12</option>
+<option value="https://media.publicationsports.com/509/1f063f10-0465-60cc-a0f6-0242ac120003">Plan EM - MAHG 2 - Leçon 13</option>
+<option value="https://media.publicationsports.com/509/1f063f10-9547-6108-9983-0242ac120003">Plan EM - MAHG 2 - Leçon 14</option>
+<option value="https://media.publicationsports.com/509/1f063f11-39a2-67a2-9b87-0242ac120003">Plan EM - MAHG 2 - Leçon 15</option>
+<option value="https://media.publicationsports.com/509/1f063f11-f207-6c34-a459-0242ac120003">Plan EM - MAHG 2 - Leçon 16</option>
+<option value="https://media.publicationsports.com/509/1f063f12-dc7e-684e-a30c-0242ac120003">Plan EM - MAHG 2 - Leçon 17</option>
+<option value="https://media.publicationsports.com/509/1f063f13-7fe5-6d0c-ad48-0242ac120003">Plan EM - MAHG 2 - Leçon 18</option>
+<option value="https://media.publicationsports.com/509/1f063f14-052d-6fdc-9c3c-0242ac120003">Plan EM - MAHG 2 - Leçon 19</option>
+<option value="https://media.publicationsports.com/509/1f063f14-b74e-6ec8-8c61-0242ac120003">Plan EM - MAHG 2 - Leçon 20</option>
+<option value="https://media.publicationsports.com/509/1f063f15-4e17-606c-9183-0242ac120003">Plan EM - MAHG 2 - Leçon 21</option>
+<option value="https://media.publicationsports.com/509/1f063f15-ebef-6e2e-85e9-0242ac120003">Plan EM - MAHG 2 - Leçon 22</option>
+<option value="https://media.publicationsports.com/509/1f063f2d-fa07-6972-b3c0-0242ac120003">Plan EM - MAHG 3 - Leçon 1</option>
+<option value="https://media.publicationsports.com/509/1f063f2e-a4ac-6ec2-b2e0-0242ac120003">Plan EM - MAHG 3 - Leçon 2</option>
+<option value="https://media.publicationsports.com/509/1f063f2f-28b6-6114-8f25-0242ac120003">Plan EM - MAHG 3 - Leçon 3</option>
+<option value="https://media.publicationsports.com/509/1f063f30-250c-6788-86ba-0242ac120003">Plan EM - MAHG 3 - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063f31-1d5f-62e6-b08f-0242ac120003">Plan EM - MAHG 3 - Leçon 5</option>
+<option value="https://media.publicationsports.com/509/1f063f31-d1df-6cfc-8045-0242ac120003">Plan EM - MAHG 3 - Leçon 6</option>
+<option value="https://media.publicationsports.com/509/1f063f33-1fc5-6a2e-8ae8-0242ac120003">Plan EM - MAHG 3 - Leçon 7</option>
+<option value="https://media.publicationsports.com/509/1f063f33-9b01-66a2-bb20-0242ac120003">Plan EM - MAHG 3 - Leçon 8</option>
+<option value="https://media.publicationsports.com/509/1f063f34-3ffd-6624-b63b-0242ac120003">Plan EM - MAHG 3 - Leçon 9</option>
+<option value="https://media.publicationsports.com/509/1f063f34-eb85-6b18-9117-0242ac120003">Plan EM - MAHG 3 - Leçon 10</option>
+<option value="https://media.publicationsports.com/509/1f063f35-9bae-6c1a-b0e7-0242ac120003">Plan EM - MAHG 3 - Leçon 11</option>
+<option value="https://media.publicationsports.com/509/1f063f84-3ada-617e-bdc8-0242ac120003">Plan EM - MAHG 3 - Leçon 12</option>
+<option value="https://media.publicationsports.com/509/1f063f4e-81dd-69e4-aeff-0242ac120003">Plan EM - MAHG 3 - Leçon 13</option>
+<option value="https://media.publicationsports.com/509/1f063f4d-e3d5-610c-b33f-0242ac120003">Plan EM - MAHG 3 - Leçon 14</option>
+<option value="https://media.publicationsports.com/509/1f063f50-93c5-6fec-a2bb-0242ac120003">Plan EM - MAHG 3 - Leçon 15</option>
+<option value="https://media.publicationsports.com/509/1f063f51-293c-660c-97bc-0242ac120003">Plan EM - MAHG 3 - Leçon 16</option>
+<option value="https://media.publicationsports.com/509/1f063f52-1b79-614a-a3b3-0242ac120003">Plan EM - MAHG 3 - Leçon 17</option>
+<option value="https://media.publicationsports.com/509/1f063f53-3392-66a4-b5b2-0242ac120003">Plan EM - MAHG 3 - Leçon 18</option>
+<option value="https://media.publicationsports.com/509/1f063f53-c0eb-6dc0-91df-0242ac120003">Plan EM - MAHG 3 - Leçon 19</option>
+<option value="https://media.publicationsports.com/509/1f063f54-54f4-6a80-88f7-0242ac120003">Plan EM - MAHG 3 - Leçon 20</option>
+<option value="https://media.publicationsports.com/509/1f063f54-e2f8-61ec-a6ff-0242ac120003">Plan EM - MAHG 3 - Leçon 21</option>
+<option value="https://media.publicationsports.com/509/1f063f55-9762-6894-af58-0242ac120003">Plan EM - MAHG 3 - Leçon 22</option>
+<option value="https://media.publicationsports.com/509/1f063f6b-45c7-6852-8526-0242ac120003">Plan EM - MAHG 4 - Leçon 1</option>
+<option value="https://media.publicationsports.com/509/1f063f5b-f117-6d2a-9553-0242ac120003">Plan EM - MAHG 4 - Leçon 2</option>
+<option value="https://media.publicationsports.com/509/1f063f5d-492f-67aa-9a92-0242ac120003">Plan EM - MAHG 4 - Leçon 3</option>
+<option value="https://media.publicationsports.com/509/1f063f5c-7ec7-6c7e-b457-0242ac120003">Plan EM - MAHG 4 - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063f5e-49f8-6d66-8140-0242ac120003">Plan EM - MAHG 4 - Leçon 5</option>
+<option value="https://media.publicationsports.com/509/1f063f5f-386b-6606-9cfc-0242ac120003">Plan EM - MAHG 4 - Leçon 6</option>
+<option value="https://media.publicationsports.com/509/1f063f5f-c229-66cc-b25c-0242ac120003">Plan EM - MAHG 4 - Leçon 7</option>
+<option value="https://media.publicationsports.com/509/1f063f60-5283-633a-a023-0242ac120003">Plan EM - MAHG 4 - Leçon 8</option>
+<option value="https://media.publicationsports.com/509/1f063f60-dfa8-6724-9f82-0242ac120003">Plan EM - MAHG 4 - Leçon 9</option>
+<option value="https://media.publicationsports.com/509/1f063f61-6b7d-63ee-9a7a-0242ac120003">Plan EM - MAHG 4 - Leçon 10</option>
+<option value="https://media.publicationsports.com/509/1f063f62-0694-6f9e-a687-0242ac120003">Plan EM - MAHG 4 - Leçon 11</option>
+<option value="https://media.publicationsports.com/509/1f063f67-9f71-629e-81e7-0242ac120003">Plan EM - MAHG 4 - Leçon 12</option>
+<option value="https://media.publicationsports.com/509/1f063f68-361c-64aa-8511-0242ac120003">Plan EM - MAHG 4 - Leçon 13</option>
+<option value="https://media.publicationsports.com/509/1f063f69-1dca-627a-aa5d-0242ac120003">Plan EM - MAHG 4 - Leçon 14</option>
+<option value="https://media.publicationsports.com/509/1f063f6d-1458-6d5a-925f-0242ac120003">Plan EM - MAHG 4 - Leçon 15</option>
+<option value="https://media.publicationsports.com/509/1f063f6d-bc51-6354-99ab-0242ac120003">Plan EM - MAHG 4 - Leçon 16</option>
+<option value="https://media.publicationsports.com/509/1f063f6e-3ba1-694c-9af9-0242ac120003">Plan EM - MAHG 4 - Leçon 17</option>
+<option value="https://media.publicationsports.com/509/1f063f71-e131-6c24-a6be-0242ac120003">Plan EM - MAHG 4 - Leçon 18</option>
+<option value="https://media.publicationsports.com/509/1f063f72-85d3-6f0c-8f51-0242ac120003">Plan EM - MAHG 4 - Leçon 19</option>
+<option value="https://media.publicationsports.com/509/1f063f70-5387-6b72-bc2a-0242ac120003">Plan EM - MAHG 4 - Leçon 20</option>
+<option value="https://media.publicationsports.com/509/1f063f73-2655-67be-a571-0242ac120003">Plan EM - MAHG 4 - Leçon 21</option>
+<option value="https://media.publicationsports.com/509/1f063f73-dc53-6b38-b2a8-0242ac120003">Plan EM - MAHG 4 - Leçon 22</option>
+<option value="https://media.publicationsports.com/509/1f063e8c-feb1-6cc6-963e-0242ac120003">Plan EM - MAHG 0 - Leçon 1</option>
+<option value="https://media.publicationsports.com/509/1f063e92-df89-6dfc-a6a8-0242ac120003">Plan EM - MAHG 0 - Leçon 2</option>
+<option value="https://media.publicationsports.com/509/1f063e93-b05f-674c-9e63-0242ac120003">Plan EM - MAHG 0 - Leçon 3</option>
+<option value="https://media.publicationsports.com/509/1f063e8e-3f3a-65a8-a7f9-0242ac120003">Plan EM - MAHG 0 - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063e94-8065-6266-905f-0242ac120003">Plan EM - MAHG 0 - Leçon 5</option>
+<option value="https://media.publicationsports.com/509/1f063e95-3384-6e78-a558-0242ac120003">Plan EM - MAHG 0 - Leçon 6</option>
+<option value="https://media.publicationsports.com/509/1f063e95-c59b-6640-a40b-0242ac120003">Plan EM - MAHG 0 - Leçon 7</option>
+<option value="https://media.publicationsports.com/509/1f063e98-52ba-63bc-8c16-0242ac120003">Plan EM - MAHG 0 - Leçon 8</option>
+<option value="https://media.publicationsports.com/509/1f063e96-8879-6d10-9ce0-0242ac120003">Plan EM - MAHG 0 - Leçon 9</option>
+<option value="https://media.publicationsports.com/509/1f063e97-389a-64a6-8df0-0242ac120003">Plan EM - MAHG 0 - Leçon 10</option>
+<option value="https://media.publicationsports.com/509/1f063e9c-2517-6974-a008-0242ac120003">Plan EM - MAHG 0 - Leçon 11</option>
+<option value="https://media.publicationsports.com/509/1f063e9c-a79c-657a-b2ef-0242ac120003">Plan EM - MAHG 0 - Leçon 12</option>
+<option value="https://media.publicationsports.com/509/1f063e9d-354c-6f00-a3e1-0242ac120003">Plan EM - MAHG 0 - Leçon 13</option>
+<option value="https://media.publicationsports.com/509/1f063e9d-bcc2-66f6-8533-0242ac120003">Plan EM - MAHG 0 - Leçon 14</option>
+<option value="https://media.publicationsports.com/509/1f063e9e-4b7b-6da2-a162-0242ac120003">Plan EM - MAHG 0 - Leçon 15</option>
+<option value="https://media.publicationsports.com/509/1f063e9e-fedb-6e74-9f61-0242ac120003">Plan EM - MAHG 0 - Leçon 16</option>
+<option value="https://media.publicationsports.com/509/1f063e9f-75c3-64e2-9f43-0242ac120003">Plan EM - MAHG 0 - Leçon 17</option>
+<option value="https://media.publicationsports.com/509/1f063ea0-003f-6224-815a-0242ac120003">Plan EM - MAHG 0 - Leçon 18</option>
+<option value="https://media.publicationsports.com/509/1f063ea0-9895-6096-b994-0242ac120003">Plan EM - MAHG 0 - Leçon 19</option>
+<option value="https://media.publicationsports.com/509/1f063ea1-363b-639a-af0e-0242ac120003">Plan EM - MAHG 0 - Leçon 20</option>
   </select>
-  <p id="lienLecon"></p>
+  <div id="lienLecon" class="lien"></div>
+</div>
 
-  <!-- Ateliers 1 à 5 -->
-  <div id="ateliers"></div>
+<h2>2. Ateliers sur la glace</h2>
 
-  <!-- Section gardiens -->
-  <label>Gardiens de but – Noms des entraîneurs</label>
-  <input type="text" id="nomsGB" oninput="updateAll()">
+    <div class="bloc">
+      <h3>Atelier 1</h3>
+      <label>Nom des entraîneurs :</label>
+      <input type="text" id="noms1" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <label>Choisissez un exercice :</label>
+      <select id="exercice1" onchange="updateAll()">
+        <option value="">-- Sélectionner un exercice --</option>
+        <option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#00-Eval - Exercice d’évaluation MAHG 0</option>
+<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#01-Eval - Évaluation MAHG 1-1</option>
+<option value="https://media.publicationsports.com/509/1f060dab-7b93-63e2-8077-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#02-Eval - Évaluation MAHG 1-2</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-3640-60cc-a962-0242ac120003?_gl=1*1dgonfj*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#03-Eval - Évaluation MAHG 2-1</option>
+<option value="https://media.publicationsports.com/509/1f0631bc-9288-6234-ae28-0242ac120003?_gl=1*koosos*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#04-Eval - Évaluation MAHG 2-2</option>
+<option value="https://media.publicationsports.com/509/1f063213-c7a9-6056-8f51-0242ac120003">#05-Eval - Évaluation MAHG 2-3</option>
+<option value="https://media.publicationsports.com/509/1f063217-de7a-663c-b816-0242ac120003">#06-Eval - Évaluation MAHG 3-1</option>
+<option value="https://media.publicationsports.com/509/1f063221-b23c-6944-8988-0242ac120003">#07-Eval - Évaluation MAHG 3-2</option>
+<option value="https://media.publicationsports.com/509/1f063223-e01b-6db8-b6ef-0242ac120003">#08-Eval - Évaluation MAHG 3-3</option>
+<option value="https://media.publicationsports.com/509/1f06322c-4c78-6a4e-af17-0242ac120003">#09-Eval - Évaluation MAHG 4-1</option>
+<option value="https://media.publicationsports.com/509/1f060da9-41b9-68e4-91fa-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#1-S - Zambo dit</option>
+<option value="https://media.publicationsports.com/509/1f063190-d606-6870-8ee6-0242ac120003">#2-S - Le gardien du musée</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-1476-6b3c-ae67-0242ac120003">#3-S - Labyrinthe 6</option>
+<option value="https://media.publicationsports.com/509/1f06320b-b66b-6440-a3cb-0242ac120003">#4-S - La lutte</option>
+<option value="https://media.publicationsports.com/509/1f063215-bd0f-6a6c-99b0-0242ac120003">#5-S - Glace en lave</option>
+<option value="https://media.publicationsports.com/509/1f06321d-d469-6962-8f0f-0242ac120003">#6-S - Ballon marteau</option>
+<option value="https://media.publicationsports.com/509/1f063225-eafc-6abe-8752-0242ac120003">#8-S - Le chasse-neige</option>
+<option value="https://media.publicationsports.com/509/1f06322e-5f98-697e-9525-0242ac120003">#9-S - L’arrêt</option>
+<option value="https://media.publicationsports.com/509/1f06322f-dc7f-66ee-a861-0242ac120003">#10-S - 1-2-3 Soleil</option>
+<option value="https://media.publicationsports.com/509/1f063231-2e31-6a7c-912d-0242ac120003">#11-S - Course navette</option>
+<option value="https://media.publicationsports.com/509/1f063232-b9fc-6196-94ef-0242ac120003">#12-S - Transitions arrière</option>
+<option value="https://media.publicationsports.com/509/1f063234-fce3-6a34-81b5-0242ac120003">#13-S - Le champ d’astéroïdes</option>
+<option value="https://media.publicationsports.com/509/1f06323a-2091-6666-8e6d-0242ac120003">#14-S - Les obstacles</option>
+<option value="https://media.publicationsports.com/509/1f06323c-4df6-64b0-ac35-0242ac120003">#29-L - Le labyrinthe</option>
+<option value="https://media.publicationsports.com/509/1f06323e-547d-6098-ab97-0242ac120003">#30-L - Auto en panne</option>
+<option value="https://media.publicationsports.com/509/1f063240-7524-68f8-97bd-0242ac120003">#31-L - La planche à roulettes</option>
+<option value="https://media.publicationsports.com/509/1f063248-26e3-6038-93cb-0242ac120003">#33-L - Le jongleur</option>
+<option value="https://media.publicationsports.com/509/1f063243-36eb-60d4-ab6d-0242ac120003">#34-L - Le trésor</option>
+<option value="https://media.publicationsports.com/509/1f06324c-6304-61c6-bea0-0242ac120003">#35-L - Le zigzag</option>
+<option value="https://media.publicationsports.com/509/1f06324d-cb97-6156-9770-0242ac120003">#36-L - Les carres</option>
+<option value="https://media.publicationsports.com/509/1f06324f-3a4d-6ae0-a06f-0242ac120003">#37-L - Lumière Verte-Jaune-Rouge</option>
+<option value="https://media.publicationsports.com/509/1f0632a0-0295-61c4-a345-0242ac120003">#38-L - Tag anneau</option>
+<option value="https://media.publicationsports.com/509/1f063250-8ef9-6156-9c8b-0242ac120003">#40-L - Tic-tac-toe à relais</option>
+<option value="https://media.publicationsports.com/509/1f063256-c82c-6bac-9e9a-0242ac120003">#41-L - Le pingouin</option>
+<option value="https://media.publicationsports.com/509/1f063258-600e-67b2-ae46-0242ac120003">#43-L - Le chat et la souris</option>
+<option value="https://media.publicationsports.com/509/1f06325a-4119-6094-8f2a-0242ac120003">#44-L - L’échange</option>
+<option value="https://media.publicationsports.com/509/1f0632a1-bb7e-628e-9607-0242ac120003">#45-L - Les patins explosifs</option>
+<option value="https://media.publicationsports.com/509/1f06325b-b33f-6c76-aaec-0242ac120003">#46-L - Les quatre coins</option>
+<option value="https://media.publicationsports.com/509/1f06325d-6cd6-6d5a-88c8-0242ac120003">#49-L - Flip flop</option>
+<option value="https://media.publicationsports.com/509/1f063263-f67a-6b6e-ab70-0242ac120003">#50-L - L’arbre qui tombe</option>
+<option value="https://media.publicationsports.com/509/1f063265-3005-61f8-a5c3-0242ac120003">#51-L - Tag face à face</option>
+<option value="https://media.publicationsports.com/509/1f063266-db37-6836-add1-0242ac120003">#52-L - Chauffeur d’autobus</option>
+<option value="https://media.publicationsports.com/509/1f063268-cc53-63e0-b5bd-0242ac120003">#53-L - Circuit 1</option>
+<option value="https://media.publicationsports.com/509/1f06326a-21a4-6398-b0f1-0242ac120003">#54-L - Course en 8</option>
+<option value="https://media.publicationsports.com/509/1f06326b-53b9-60a8-ba03-0242ac120003">#55-L - La piste de course</option>
+<option value="https://media.publicationsports.com/509/1f06326c-a24c-6ef8-8181-0242ac120003">#56-L - Tag 360</option>
+<option value="https://media.publicationsports.com/509/1f063274-b7cf-6fc0-92f1-0242ac120003">#57-L - Le gâteau</option>
+<option value="https://media.publicationsports.com/509/1f063276-2d26-6cb4-80d7-0242ac120003">#58-L - Les croisements</option>
+<option value="https://media.publicationsports.com/509/1f063277-eea0-67c2-92f2-0242ac120003">#59-L - L’accélération croisée</option>
+<option value="https://media.publicationsports.com/509/1f063279-2eca-655e-92ed-0242ac120003">#60-L - La rondelle musicale</option>
+<option value="https://media.publicationsports.com/509/1f06327b-8f13-6454-92ab-0242ac120003">#62-L - La poussée arrière</option>
+<option value="https://media.publicationsports.com/509/1f0632a6-1cef-6bfe-be49-0242ac120003">#63-L - Le démarreur arrière</option>
+<option value="https://media.publicationsports.com/509/1f06327d-3107-6df4-b530-0242ac120003">#64-L - Tag reculons</option>
+<option value="https://media.publicationsports.com/509/1f06327e-c4bb-66c6-b1e8-0242ac120003">#65-L - Tic-tac-toe à reculons</option>
+<option value="https://media.publicationsports.com/509/1f063280-6c05-6a0c-864b-0242ac120003">#66-L - Départ arrière</option>
+<option value="https://media.publicationsports.com/509/1f063281-dc8d-65e4-a1c6-0242ac120003">#67-L - La remorqueuse</option>
+<option value="https://media.publicationsports.com/509/1f063287-3885-64b4-9194-0242ac120003">#68-L - Le grand pivot</option>
+<option value="https://media.publicationsports.com/509/1f063288-d50a-64f0-8999-0242ac120003">#69-L - Circuit 2</option>
+<option value="https://media.publicationsports.com/509/1f06328a-d43a-6d7a-a585-0242ac120003">#70-L - La fontaine</option>
+<option value="https://media.publicationsports.com/509/1f06328c-8833-6e2a-aa03-0242ac120003">#71-L - Course d’agilité en 8</option>
+<option value="https://media.publicationsports.com/509/1f06328d-d8ff-6560-a8a8-0242ac120003">#72-L - Le petit train</option>
+<option value="https://media.publicationsports.com/509/1f06328f-00da-6ee4-96e5-0242ac120003">#80-M - Le facteur</option>
+<option value="https://media.publicationsports.com/509/1f06328d-fb1a-6de8-b079-0242ac120003">#81-M - Le transporteur</option>
+<option value="https://media.publicationsports.com/509/1f06328c-f4c6-6dbc-bafb-0242ac120003">#82-M - La course à relais avec rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06328b-149a-6456-a44d-0242ac120003">#83-M - Parcours 5</option>
+<option value="https://media.publicationsports.com/509/1f063289-cb6f-6d2c-8086-0242ac120003">#84-M - Le voleur de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063288-37f0-63fe-8487-0242ac120003">#85-M - La fosse aux requins</option>
+<option value="https://media.publicationsports.com/509/1f063287-263b-6fce-8ae7-0242ac120003">#86-M - L’horloge</option>
+<option value="https://media.publicationsports.com/509/1f063286-0c90-6828-a48b-0242ac120003">#87-M - Méli-mélo</option>
+<option value="https://media.publicationsports.com/509/1f063284-f89e-6aaa-a649-0242ac120003">#88-M - Le passage secret</option>
+<option value="https://media.publicationsports.com/509/1f063283-c0f3-630e-8bb4-0242ac120003">#89-M - Feinte et passe</option>
+<option value="https://media.publicationsports.com/509/1f063282-b076-6cde-8063-0242ac120003">#90-M - L’affrontement</option>
+<option value="https://media.publicationsports.com/509/1f06327f-d7b5-6352-92be-0242ac120003">#92-M - D’un bout à l’autre</option>
+<option value="https://media.publicationsports.com/509/1f06327e-5904-6fe0-b213-0242ac120003">#93-M - Les échappées</option>
+<option value="https://media.publicationsports.com/509/1f06327c-d27d-6e5a-84e2-0242ac120003">#94-M - Lève la tête</option>
+<option value="https://media.publicationsports.com/509/1f063279-d6d5-6794-ac76-0242ac120003">#96-M - Vise la cible</option>
+<option value="https://media.publicationsports.com/509/1f063278-3cd4-6d3a-87b5-0242ac120003">#97-M - Dans le mille</option>
+<option value="https://media.publicationsports.com/509/1f063276-6135-6f78-8275-0242ac120003">#98-M - Le tiroir</option>
+<option value="https://media.publicationsports.com/509/1f063274-e3bd-6880-9a81-0242ac120003">#99-M - Le grand ménage</option>
+<option value="https://media.publicationsports.com/509/1f063271-4dcf-6100-9d42-0242ac120003">#100-M - Passe balayée revers</option>
+<option value="https://media.publicationsports.com/509/1f06326e-f533-628c-ad35-0242ac120003">#101-M - Passe et va</option>
+<option value="https://media.publicationsports.com/509/1f06326d-bfad-61e0-8742-0242ac120003">#102-M - Pousse-attrape</option>
+<option value="https://media.publicationsports.com/509/1f06326b-baa0-6712-b9b8-0242ac120003">#103-M - L’espion</option>
+<option value="https://media.publicationsports.com/509/1f063269-1367-60d8-b639-0242ac120003">#104-M - Tireur d’élite</option>
+<option value="https://media.publicationsports.com/509/1f063267-37b2-6066-a727-0242ac120003">#105-M - Tireur d’élite (Revers)</option>
+<option value="https://media.publicationsports.com/509/1f063264-dcde-64d4-92f5-0242ac120003">#106-M - La petite banane</option>
+<option value="https://media.publicationsports.com/509/1f063262-190c-692c-af11-0242ac120003">#107-M - Capture la rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06325f-ad9d-649a-a387-0242ac120003">#109-M - Protège le nid</option>
+<option value="https://media.publicationsports.com/509/1f06325d-8d9b-6022-9fd9-0242ac120003">#110-M - Les protecteurs de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063259-3fa9-62e6-90f5-0242ac120003">#130-T - La poursuite</option>
+<option value="https://media.publicationsports.com/509/1f063257-ba02-6012-91f2-0242ac120003">#131-T - Approche au porteur</option>
+<option value="https://media.publicationsports.com/509/1f063255-e3f8-651c-8e13-0242ac120003">#133-T - Bouledogue</option>
+<option value="https://media.publicationsports.com/509/1f063253-ff4f-6d6c-a5a0-0242ac120003">#134-T - Le démarquage du non-porteur</option>
+<option value="https://media.publicationsports.com/509/1f063250-cd37-6134-9c62-0242ac120003">#135-T - La chasse aux rondelles</option>
+<option value="https://media.publicationsports.com/509/1f06324e-99cd-6796-8944-0242ac120003">#136-T - La porte</option>
+<option value="https://media.publicationsports.com/509/1f06324b-0675-6e74-848a-0242ac120003">#138-T - Le vol du diamant</option>
+<option value="https://media.publicationsports.com/509/1f063248-05df-6346-b706-0242ac120003">#139-T - 2 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063243-7ba9-63ce-8f2e-0242ac120003">#150-JER - La prison (1 contre 1)</option>
+<option value="https://media.publicationsports.com/509/1f063241-d71f-61d8-ac50-0242ac120003">#152-JER - 1 contre 1 (support)</option>
+<option value="https://media.publicationsports.com/509/1f06323f-c2f3-6922-bce7-0242ac120003">#153-JER - 1 contre 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f06323d-3cc8-6714-840f-0242ac120003">#154-JER - 2 contre 2</option>
+<option value="https://media.publicationsports.com/509/1f06323a-a54f-6a88-985a-0242ac120003">#156-JER - 3 contre 3 en deux zones</option>
+<option value="https://media.publicationsports.com/509/1f063237-630f-641e-be11-0242ac120003">#157-JER - 4 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063235-3ddc-645a-9a16-0242ac120003">#158-JER - Jumping-jack</option>
+<option value="https://media.publicationsports.com/509/1f06322f-1a07-6eea-b474-0242ac120003">#162-JER - Mini Festival</option>
+<option value="https://media.publicationsports.com/509/1f063227-3d62-6834-a3ba-0242ac120003">#165-JER - 3 fois à 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063224-a6ee-68dc-85ed-0242ac120003">#166-JER - Étourdir le gardien</option>
+<option value="https://media.publicationsports.com/509/1f063220-8834-6aa8-9a7c-0242ac120003">#183-JC - Les rois de la passe</option>
+<option value="https://media.publicationsports.com/509/1f06321e-7982-675a-a966-0242ac120003">#184-JC - Rugby</option>
+<option value="https://media.publicationsports.com/509/1f063219-45e8-6ac0-ab30-0242ac120003">#185-JC - Soccer</option>
+<option value="https://media.publicationsports.com/509/1f063215-6380-6f1e-972e-0242ac120003">#187-JC - La liste des défis</option>
+<option value="https://media.publicationsports.com/509/1f063212-d94c-6afc-8bfe-0242ac120003">#188-JC - Ballon chasseur</option>
+<option value="https://media.publicationsports.com/509/1f063211-70ab-6468-9a1f-0242ac120003">#189-JC - Hockey fou</option>
+<option value="https://media.publicationsports.com/509/1f06320e-ee83-6186-80ae-0242ac120003">#190-JC - Patate chaude</option>
+<option value="https://media.publicationsports.com/509/1f0631bf-3826-62ca-a796-0242ac120003">#192-JC - La chasse</option>
+<option value="https://media.publicationsports.com/509/1f0631ba-135d-66a0-b2af-0242ac120003">#200-JD - Match 1/6 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b7-7249-6aea-873a-0242ac120003">#201-JD - Match 1/3 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-e12d-6e14-bc52-0242ac120003">#202-JD - Match 1/4 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b1-e97c-6a3c-8998-0242ac120003">#203-JD - Match 1/2 glace</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-9de1-6262-9696-0242ac120003">#204-JD - Hockey libre</option>
+      </select>
+      <div id="lienExercice1" class="lien"></div>
+    </div>
+    
+    <div class="bloc">
+      <h3>Atelier 2</h3>
+      <label>Nom des entraîneurs :</label>
+      <input type="text" id="noms2" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <label>Choisissez un exercice :</label>
+      <select id="exercice2" onchange="updateAll()">
+        <option value="">-- Sélectionner un exercice --</option>
+        <option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#00-Eval - Exercice d’évaluation MAHG 0</option>
+<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#01-Eval - Évaluation MAHG 1-1</option>
+<option value="https://media.publicationsports.com/509/1f060dab-7b93-63e2-8077-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#02-Eval - Évaluation MAHG 1-2</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-3640-60cc-a962-0242ac120003?_gl=1*1dgonfj*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#03-Eval - Évaluation MAHG 2-1</option>
+<option value="https://media.publicationsports.com/509/1f0631bc-9288-6234-ae28-0242ac120003?_gl=1*koosos*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#04-Eval - Évaluation MAHG 2-2</option>
+<option value="https://media.publicationsports.com/509/1f063213-c7a9-6056-8f51-0242ac120003">#05-Eval - Évaluation MAHG 2-3</option>
+<option value="https://media.publicationsports.com/509/1f063217-de7a-663c-b816-0242ac120003">#06-Eval - Évaluation MAHG 3-1</option>
+<option value="https://media.publicationsports.com/509/1f063221-b23c-6944-8988-0242ac120003">#07-Eval - Évaluation MAHG 3-2</option>
+<option value="https://media.publicationsports.com/509/1f063223-e01b-6db8-b6ef-0242ac120003">#08-Eval - Évaluation MAHG 3-3</option>
+<option value="https://media.publicationsports.com/509/1f06322c-4c78-6a4e-af17-0242ac120003">#09-Eval - Évaluation MAHG 4-1</option>
+<option value="https://media.publicationsports.com/509/1f060da9-41b9-68e4-91fa-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#1-S - Zambo dit</option>
+<option value="https://media.publicationsports.com/509/1f063190-d606-6870-8ee6-0242ac120003">#2-S - Le gardien du musée</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-1476-6b3c-ae67-0242ac120003">#3-S - Labyrinthe 6</option>
+<option value="https://media.publicationsports.com/509/1f06320b-b66b-6440-a3cb-0242ac120003">#4-S - La lutte</option>
+<option value="https://media.publicationsports.com/509/1f063215-bd0f-6a6c-99b0-0242ac120003">#5-S - Glace en lave</option>
+<option value="https://media.publicationsports.com/509/1f06321d-d469-6962-8f0f-0242ac120003">#6-S - Ballon marteau</option>
+<option value="https://media.publicationsports.com/509/1f063225-eafc-6abe-8752-0242ac120003">#8-S - Le chasse-neige</option>
+<option value="https://media.publicationsports.com/509/1f06322e-5f98-697e-9525-0242ac120003">#9-S - L’arrêt</option>
+<option value="https://media.publicationsports.com/509/1f06322f-dc7f-66ee-a861-0242ac120003">#10-S - 1-2-3 Soleil</option>
+<option value="https://media.publicationsports.com/509/1f063231-2e31-6a7c-912d-0242ac120003">#11-S - Course navette</option>
+<option value="https://media.publicationsports.com/509/1f063232-b9fc-6196-94ef-0242ac120003">#12-S - Transitions arrière</option>
+<option value="https://media.publicationsports.com/509/1f063234-fce3-6a34-81b5-0242ac120003">#13-S - Le champ d’astéroïdes</option>
+<option value="https://media.publicationsports.com/509/1f06323a-2091-6666-8e6d-0242ac120003">#14-S - Les obstacles</option>
+<option value="https://media.publicationsports.com/509/1f06323c-4df6-64b0-ac35-0242ac120003">#29-L - Le labyrinthe</option>
+<option value="https://media.publicationsports.com/509/1f06323e-547d-6098-ab97-0242ac120003">#30-L - Auto en panne</option>
+<option value="https://media.publicationsports.com/509/1f063240-7524-68f8-97bd-0242ac120003">#31-L - La planche à roulettes</option>
+<option value="https://media.publicationsports.com/509/1f063248-26e3-6038-93cb-0242ac120003">#33-L - Le jongleur</option>
+<option value="https://media.publicationsports.com/509/1f063243-36eb-60d4-ab6d-0242ac120003">#34-L - Le trésor</option>
+<option value="https://media.publicationsports.com/509/1f06324c-6304-61c6-bea0-0242ac120003">#35-L - Le zigzag</option>
+<option value="https://media.publicationsports.com/509/1f06324d-cb97-6156-9770-0242ac120003">#36-L - Les carres</option>
+<option value="https://media.publicationsports.com/509/1f06324f-3a4d-6ae0-a06f-0242ac120003">#37-L - Lumière Verte-Jaune-Rouge</option>
+<option value="https://media.publicationsports.com/509/1f0632a0-0295-61c4-a345-0242ac120003">#38-L - Tag anneau</option>
+<option value="https://media.publicationsports.com/509/1f063250-8ef9-6156-9c8b-0242ac120003">#40-L - Tic-tac-toe à relais</option>
+<option value="https://media.publicationsports.com/509/1f063256-c82c-6bac-9e9a-0242ac120003">#41-L - Le pingouin</option>
+<option value="https://media.publicationsports.com/509/1f063258-600e-67b2-ae46-0242ac120003">#43-L - Le chat et la souris</option>
+<option value="https://media.publicationsports.com/509/1f06325a-4119-6094-8f2a-0242ac120003">#44-L - L’échange</option>
+<option value="https://media.publicationsports.com/509/1f0632a1-bb7e-628e-9607-0242ac120003">#45-L - Les patins explosifs</option>
+<option value="https://media.publicationsports.com/509/1f06325b-b33f-6c76-aaec-0242ac120003">#46-L - Les quatre coins</option>
+<option value="https://media.publicationsports.com/509/1f06325d-6cd6-6d5a-88c8-0242ac120003">#49-L - Flip flop</option>
+<option value="https://media.publicationsports.com/509/1f063263-f67a-6b6e-ab70-0242ac120003">#50-L - L’arbre qui tombe</option>
+<option value="https://media.publicationsports.com/509/1f063265-3005-61f8-a5c3-0242ac120003">#51-L - Tag face à face</option>
+<option value="https://media.publicationsports.com/509/1f063266-db37-6836-add1-0242ac120003">#52-L - Chauffeur d’autobus</option>
+<option value="https://media.publicationsports.com/509/1f063268-cc53-63e0-b5bd-0242ac120003">#53-L - Circuit 1</option>
+<option value="https://media.publicationsports.com/509/1f06326a-21a4-6398-b0f1-0242ac120003">#54-L - Course en 8</option>
+<option value="https://media.publicationsports.com/509/1f06326b-53b9-60a8-ba03-0242ac120003">#55-L - La piste de course</option>
+<option value="https://media.publicationsports.com/509/1f06326c-a24c-6ef8-8181-0242ac120003">#56-L - Tag 360</option>
+<option value="https://media.publicationsports.com/509/1f063274-b7cf-6fc0-92f1-0242ac120003">#57-L - Le gâteau</option>
+<option value="https://media.publicationsports.com/509/1f063276-2d26-6cb4-80d7-0242ac120003">#58-L - Les croisements</option>
+<option value="https://media.publicationsports.com/509/1f063277-eea0-67c2-92f2-0242ac120003">#59-L - L’accélération croisée</option>
+<option value="https://media.publicationsports.com/509/1f063279-2eca-655e-92ed-0242ac120003">#60-L - La rondelle musicale</option>
+<option value="https://media.publicationsports.com/509/1f06327b-8f13-6454-92ab-0242ac120003">#62-L - La poussée arrière</option>
+<option value="https://media.publicationsports.com/509/1f0632a6-1cef-6bfe-be49-0242ac120003">#63-L - Le démarreur arrière</option>
+<option value="https://media.publicationsports.com/509/1f06327d-3107-6df4-b530-0242ac120003">#64-L - Tag reculons</option>
+<option value="https://media.publicationsports.com/509/1f06327e-c4bb-66c6-b1e8-0242ac120003">#65-L - Tic-tac-toe à reculons</option>
+<option value="https://media.publicationsports.com/509/1f063280-6c05-6a0c-864b-0242ac120003">#66-L - Départ arrière</option>
+<option value="https://media.publicationsports.com/509/1f063281-dc8d-65e4-a1c6-0242ac120003">#67-L - La remorqueuse</option>
+<option value="https://media.publicationsports.com/509/1f063287-3885-64b4-9194-0242ac120003">#68-L - Le grand pivot</option>
+<option value="https://media.publicationsports.com/509/1f063288-d50a-64f0-8999-0242ac120003">#69-L - Circuit 2</option>
+<option value="https://media.publicationsports.com/509/1f06328a-d43a-6d7a-a585-0242ac120003">#70-L - La fontaine</option>
+<option value="https://media.publicationsports.com/509/1f06328c-8833-6e2a-aa03-0242ac120003">#71-L - Course d’agilité en 8</option>
+<option value="https://media.publicationsports.com/509/1f06328d-d8ff-6560-a8a8-0242ac120003">#72-L - Le petit train</option>
+<option value="https://media.publicationsports.com/509/1f06328f-00da-6ee4-96e5-0242ac120003">#80-M - Le facteur</option>
+<option value="https://media.publicationsports.com/509/1f06328d-fb1a-6de8-b079-0242ac120003">#81-M - Le transporteur</option>
+<option value="https://media.publicationsports.com/509/1f06328c-f4c6-6dbc-bafb-0242ac120003">#82-M - La course à relais avec rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06328b-149a-6456-a44d-0242ac120003">#83-M - Parcours 5</option>
+<option value="https://media.publicationsports.com/509/1f063289-cb6f-6d2c-8086-0242ac120003">#84-M - Le voleur de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063288-37f0-63fe-8487-0242ac120003">#85-M - La fosse aux requins</option>
+<option value="https://media.publicationsports.com/509/1f063287-263b-6fce-8ae7-0242ac120003">#86-M - L’horloge</option>
+<option value="https://media.publicationsports.com/509/1f063286-0c90-6828-a48b-0242ac120003">#87-M - Méli-mélo</option>
+<option value="https://media.publicationsports.com/509/1f063284-f89e-6aaa-a649-0242ac120003">#88-M - Le passage secret</option>
+<option value="https://media.publicationsports.com/509/1f063283-c0f3-630e-8bb4-0242ac120003">#89-M - Feinte et passe</option>
+<option value="https://media.publicationsports.com/509/1f063282-b076-6cde-8063-0242ac120003">#90-M - L’affrontement</option>
+<option value="https://media.publicationsports.com/509/1f06327f-d7b5-6352-92be-0242ac120003">#92-M - D’un bout à l’autre</option>
+<option value="https://media.publicationsports.com/509/1f06327e-5904-6fe0-b213-0242ac120003">#93-M - Les échappées</option>
+<option value="https://media.publicationsports.com/509/1f06327c-d27d-6e5a-84e2-0242ac120003">#94-M - Lève la tête</option>
+<option value="https://media.publicationsports.com/509/1f063279-d6d5-6794-ac76-0242ac120003">#96-M - Vise la cible</option>
+<option value="https://media.publicationsports.com/509/1f063278-3cd4-6d3a-87b5-0242ac120003">#97-M - Dans le mille</option>
+<option value="https://media.publicationsports.com/509/1f063276-6135-6f78-8275-0242ac120003">#98-M - Le tiroir</option>
+<option value="https://media.publicationsports.com/509/1f063274-e3bd-6880-9a81-0242ac120003">#99-M - Le grand ménage</option>
+<option value="https://media.publicationsports.com/509/1f063271-4dcf-6100-9d42-0242ac120003">#100-M - Passe balayée revers</option>
+<option value="https://media.publicationsports.com/509/1f06326e-f533-628c-ad35-0242ac120003">#101-M - Passe et va</option>
+<option value="https://media.publicationsports.com/509/1f06326d-bfad-61e0-8742-0242ac120003">#102-M - Pousse-attrape</option>
+<option value="https://media.publicationsports.com/509/1f06326b-baa0-6712-b9b8-0242ac120003">#103-M - L’espion</option>
+<option value="https://media.publicationsports.com/509/1f063269-1367-60d8-b639-0242ac120003">#104-M - Tireur d’élite</option>
+<option value="https://media.publicationsports.com/509/1f063267-37b2-6066-a727-0242ac120003">#105-M - Tireur d’élite (Revers)</option>
+<option value="https://media.publicationsports.com/509/1f063264-dcde-64d4-92f5-0242ac120003">#106-M - La petite banane</option>
+<option value="https://media.publicationsports.com/509/1f063262-190c-692c-af11-0242ac120003">#107-M - Capture la rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06325f-ad9d-649a-a387-0242ac120003">#109-M - Protège le nid</option>
+<option value="https://media.publicationsports.com/509/1f06325d-8d9b-6022-9fd9-0242ac120003">#110-M - Les protecteurs de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063259-3fa9-62e6-90f5-0242ac120003">#130-T - La poursuite</option>
+<option value="https://media.publicationsports.com/509/1f063257-ba02-6012-91f2-0242ac120003">#131-T - Approche au porteur</option>
+<option value="https://media.publicationsports.com/509/1f063255-e3f8-651c-8e13-0242ac120003">#133-T - Bouledogue</option>
+<option value="https://media.publicationsports.com/509/1f063253-ff4f-6d6c-a5a0-0242ac120003">#134-T - Le démarquage du non-porteur</option>
+<option value="https://media.publicationsports.com/509/1f063250-cd37-6134-9c62-0242ac120003">#135-T - La chasse aux rondelles</option>
+<option value="https://media.publicationsports.com/509/1f06324e-99cd-6796-8944-0242ac120003">#136-T - La porte</option>
+<option value="https://media.publicationsports.com/509/1f06324b-0675-6e74-848a-0242ac120003">#138-T - Le vol du diamant</option>
+<option value="https://media.publicationsports.com/509/1f063248-05df-6346-b706-0242ac120003">#139-T - 2 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063243-7ba9-63ce-8f2e-0242ac120003">#150-JER - La prison (1 contre 1)</option>
+<option value="https://media.publicationsports.com/509/1f063241-d71f-61d8-ac50-0242ac120003">#152-JER - 1 contre 1 (support)</option>
+<option value="https://media.publicationsports.com/509/1f06323f-c2f3-6922-bce7-0242ac120003">#153-JER - 1 contre 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f06323d-3cc8-6714-840f-0242ac120003">#154-JER - 2 contre 2</option>
+<option value="https://media.publicationsports.com/509/1f06323a-a54f-6a88-985a-0242ac120003">#156-JER - 3 contre 3 en deux zones</option>
+<option value="https://media.publicationsports.com/509/1f063237-630f-641e-be11-0242ac120003">#157-JER - 4 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063235-3ddc-645a-9a16-0242ac120003">#158-JER - Jumping-jack</option>
+<option value="https://media.publicationsports.com/509/1f06322f-1a07-6eea-b474-0242ac120003">#162-JER - Mini Festival</option>
+<option value="https://media.publicationsports.com/509/1f063227-3d62-6834-a3ba-0242ac120003">#165-JER - 3 fois à 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063224-a6ee-68dc-85ed-0242ac120003">#166-JER - Étourdir le gardien</option>
+<option value="https://media.publicationsports.com/509/1f063220-8834-6aa8-9a7c-0242ac120003">#183-JC - Les rois de la passe</option>
+<option value="https://media.publicationsports.com/509/1f06321e-7982-675a-a966-0242ac120003">#184-JC - Rugby</option>
+<option value="https://media.publicationsports.com/509/1f063219-45e8-6ac0-ab30-0242ac120003">#185-JC - Soccer</option>
+<option value="https://media.publicationsports.com/509/1f063215-6380-6f1e-972e-0242ac120003">#187-JC - La liste des défis</option>
+<option value="https://media.publicationsports.com/509/1f063212-d94c-6afc-8bfe-0242ac120003">#188-JC - Ballon chasseur</option>
+<option value="https://media.publicationsports.com/509/1f063211-70ab-6468-9a1f-0242ac120003">#189-JC - Hockey fou</option>
+<option value="https://media.publicationsports.com/509/1f06320e-ee83-6186-80ae-0242ac120003">#190-JC - Patate chaude</option>
+<option value="https://media.publicationsports.com/509/1f0631bf-3826-62ca-a796-0242ac120003">#192-JC - La chasse</option>
+<option value="https://media.publicationsports.com/509/1f0631ba-135d-66a0-b2af-0242ac120003">#200-JD - Match 1/6 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b7-7249-6aea-873a-0242ac120003">#201-JD - Match 1/3 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-e12d-6e14-bc52-0242ac120003">#202-JD - Match 1/4 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b1-e97c-6a3c-8998-0242ac120003">#203-JD - Match 1/2 glace</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-9de1-6262-9696-0242ac120003">#204-JD - Hockey libre</option>
+      </select>
+      <div id="lienExercice2" class="lien"></div>
+    </div>
+    
+    <div class="bloc">
+      <h3>Atelier 3</h3>
+      <label>Nom des entraîneurs :</label>
+      <input type="text" id="noms3" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <label>Choisissez un exercice :</label>
+      <select id="exercice3" onchange="updateAll()">
+        <option value="">-- Sélectionner un exercice --</option>
+        <option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#00-Eval - Exercice d’évaluation MAHG 0</option>
+<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#01-Eval - Évaluation MAHG 1-1</option>
+<option value="https://media.publicationsports.com/509/1f060dab-7b93-63e2-8077-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#02-Eval - Évaluation MAHG 1-2</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-3640-60cc-a962-0242ac120003?_gl=1*1dgonfj*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#03-Eval - Évaluation MAHG 2-1</option>
+<option value="https://media.publicationsports.com/509/1f0631bc-9288-6234-ae28-0242ac120003?_gl=1*koosos*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#04-Eval - Évaluation MAHG 2-2</option>
+<option value="https://media.publicationsports.com/509/1f063213-c7a9-6056-8f51-0242ac120003">#05-Eval - Évaluation MAHG 2-3</option>
+<option value="https://media.publicationsports.com/509/1f063217-de7a-663c-b816-0242ac120003">#06-Eval - Évaluation MAHG 3-1</option>
+<option value="https://media.publicationsports.com/509/1f063221-b23c-6944-8988-0242ac120003">#07-Eval - Évaluation MAHG 3-2</option>
+<option value="https://media.publicationsports.com/509/1f063223-e01b-6db8-b6ef-0242ac120003">#08-Eval - Évaluation MAHG 3-3</option>
+<option value="https://media.publicationsports.com/509/1f06322c-4c78-6a4e-af17-0242ac120003">#09-Eval - Évaluation MAHG 4-1</option>
+<option value="https://media.publicationsports.com/509/1f060da9-41b9-68e4-91fa-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#1-S - Zambo dit</option>
+<option value="https://media.publicationsports.com/509/1f063190-d606-6870-8ee6-0242ac120003">#2-S - Le gardien du musée</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-1476-6b3c-ae67-0242ac120003">#3-S - Labyrinthe 6</option>
+<option value="https://media.publicationsports.com/509/1f06320b-b66b-6440-a3cb-0242ac120003">#4-S - La lutte</option>
+<option value="https://media.publicationsports.com/509/1f063215-bd0f-6a6c-99b0-0242ac120003">#5-S - Glace en lave</option>
+<option value="https://media.publicationsports.com/509/1f06321d-d469-6962-8f0f-0242ac120003">#6-S - Ballon marteau</option>
+<option value="https://media.publicationsports.com/509/1f063225-eafc-6abe-8752-0242ac120003">#8-S - Le chasse-neige</option>
+<option value="https://media.publicationsports.com/509/1f06322e-5f98-697e-9525-0242ac120003">#9-S - L’arrêt</option>
+<option value="https://media.publicationsports.com/509/1f06322f-dc7f-66ee-a861-0242ac120003">#10-S - 1-2-3 Soleil</option>
+<option value="https://media.publicationsports.com/509/1f063231-2e31-6a7c-912d-0242ac120003">#11-S - Course navette</option>
+<option value="https://media.publicationsports.com/509/1f063232-b9fc-6196-94ef-0242ac120003">#12-S - Transitions arrière</option>
+<option value="https://media.publicationsports.com/509/1f063234-fce3-6a34-81b5-0242ac120003">#13-S - Le champ d’astéroïdes</option>
+<option value="https://media.publicationsports.com/509/1f06323a-2091-6666-8e6d-0242ac120003">#14-S - Les obstacles</option>
+<option value="https://media.publicationsports.com/509/1f06323c-4df6-64b0-ac35-0242ac120003">#29-L - Le labyrinthe</option>
+<option value="https://media.publicationsports.com/509/1f06323e-547d-6098-ab97-0242ac120003">#30-L - Auto en panne</option>
+<option value="https://media.publicationsports.com/509/1f063240-7524-68f8-97bd-0242ac120003">#31-L - La planche à roulettes</option>
+<option value="https://media.publicationsports.com/509/1f063248-26e3-6038-93cb-0242ac120003">#33-L - Le jongleur</option>
+<option value="https://media.publicationsports.com/509/1f063243-36eb-60d4-ab6d-0242ac120003">#34-L - Le trésor</option>
+<option value="https://media.publicationsports.com/509/1f06324c-6304-61c6-bea0-0242ac120003">#35-L - Le zigzag</option>
+<option value="https://media.publicationsports.com/509/1f06324d-cb97-6156-9770-0242ac120003">#36-L - Les carres</option>
+<option value="https://media.publicationsports.com/509/1f06324f-3a4d-6ae0-a06f-0242ac120003">#37-L - Lumière Verte-Jaune-Rouge</option>
+<option value="https://media.publicationsports.com/509/1f0632a0-0295-61c4-a345-0242ac120003">#38-L - Tag anneau</option>
+<option value="https://media.publicationsports.com/509/1f063250-8ef9-6156-9c8b-0242ac120003">#40-L - Tic-tac-toe à relais</option>
+<option value="https://media.publicationsports.com/509/1f063256-c82c-6bac-9e9a-0242ac120003">#41-L - Le pingouin</option>
+<option value="https://media.publicationsports.com/509/1f063258-600e-67b2-ae46-0242ac120003">#43-L - Le chat et la souris</option>
+<option value="https://media.publicationsports.com/509/1f06325a-4119-6094-8f2a-0242ac120003">#44-L - L’échange</option>
+<option value="https://media.publicationsports.com/509/1f0632a1-bb7e-628e-9607-0242ac120003">#45-L - Les patins explosifs</option>
+<option value="https://media.publicationsports.com/509/1f06325b-b33f-6c76-aaec-0242ac120003">#46-L - Les quatre coins</option>
+<option value="https://media.publicationsports.com/509/1f06325d-6cd6-6d5a-88c8-0242ac120003">#49-L - Flip flop</option>
+<option value="https://media.publicationsports.com/509/1f063263-f67a-6b6e-ab70-0242ac120003">#50-L - L’arbre qui tombe</option>
+<option value="https://media.publicationsports.com/509/1f063265-3005-61f8-a5c3-0242ac120003">#51-L - Tag face à face</option>
+<option value="https://media.publicationsports.com/509/1f063266-db37-6836-add1-0242ac120003">#52-L - Chauffeur d’autobus</option>
+<option value="https://media.publicationsports.com/509/1f063268-cc53-63e0-b5bd-0242ac120003">#53-L - Circuit 1</option>
+<option value="https://media.publicationsports.com/509/1f06326a-21a4-6398-b0f1-0242ac120003">#54-L - Course en 8</option>
+<option value="https://media.publicationsports.com/509/1f06326b-53b9-60a8-ba03-0242ac120003">#55-L - La piste de course</option>
+<option value="https://media.publicationsports.com/509/1f06326c-a24c-6ef8-8181-0242ac120003">#56-L - Tag 360</option>
+<option value="https://media.publicationsports.com/509/1f063274-b7cf-6fc0-92f1-0242ac120003">#57-L - Le gâteau</option>
+<option value="https://media.publicationsports.com/509/1f063276-2d26-6cb4-80d7-0242ac120003">#58-L - Les croisements</option>
+<option value="https://media.publicationsports.com/509/1f063277-eea0-67c2-92f2-0242ac120003">#59-L - L’accélération croisée</option>
+<option value="https://media.publicationsports.com/509/1f063279-2eca-655e-92ed-0242ac120003">#60-L - La rondelle musicale</option>
+<option value="https://media.publicationsports.com/509/1f06327b-8f13-6454-92ab-0242ac120003">#62-L - La poussée arrière</option>
+<option value="https://media.publicationsports.com/509/1f0632a6-1cef-6bfe-be49-0242ac120003">#63-L - Le démarreur arrière</option>
+<option value="https://media.publicationsports.com/509/1f06327d-3107-6df4-b530-0242ac120003">#64-L - Tag reculons</option>
+<option value="https://media.publicationsports.com/509/1f06327e-c4bb-66c6-b1e8-0242ac120003">#65-L - Tic-tac-toe à reculons</option>
+<option value="https://media.publicationsports.com/509/1f063280-6c05-6a0c-864b-0242ac120003">#66-L - Départ arrière</option>
+<option value="https://media.publicationsports.com/509/1f063281-dc8d-65e4-a1c6-0242ac120003">#67-L - La remorqueuse</option>
+<option value="https://media.publicationsports.com/509/1f063287-3885-64b4-9194-0242ac120003">#68-L - Le grand pivot</option>
+<option value="https://media.publicationsports.com/509/1f063288-d50a-64f0-8999-0242ac120003">#69-L - Circuit 2</option>
+<option value="https://media.publicationsports.com/509/1f06328a-d43a-6d7a-a585-0242ac120003">#70-L - La fontaine</option>
+<option value="https://media.publicationsports.com/509/1f06328c-8833-6e2a-aa03-0242ac120003">#71-L - Course d’agilité en 8</option>
+<option value="https://media.publicationsports.com/509/1f06328d-d8ff-6560-a8a8-0242ac120003">#72-L - Le petit train</option>
+<option value="https://media.publicationsports.com/509/1f06328f-00da-6ee4-96e5-0242ac120003">#80-M - Le facteur</option>
+<option value="https://media.publicationsports.com/509/1f06328d-fb1a-6de8-b079-0242ac120003">#81-M - Le transporteur</option>
+<option value="https://media.publicationsports.com/509/1f06328c-f4c6-6dbc-bafb-0242ac120003">#82-M - La course à relais avec rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06328b-149a-6456-a44d-0242ac120003">#83-M - Parcours 5</option>
+<option value="https://media.publicationsports.com/509/1f063289-cb6f-6d2c-8086-0242ac120003">#84-M - Le voleur de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063288-37f0-63fe-8487-0242ac120003">#85-M - La fosse aux requins</option>
+<option value="https://media.publicationsports.com/509/1f063287-263b-6fce-8ae7-0242ac120003">#86-M - L’horloge</option>
+<option value="https://media.publicationsports.com/509/1f063286-0c90-6828-a48b-0242ac120003">#87-M - Méli-mélo</option>
+<option value="https://media.publicationsports.com/509/1f063284-f89e-6aaa-a649-0242ac120003">#88-M - Le passage secret</option>
+<option value="https://media.publicationsports.com/509/1f063283-c0f3-630e-8bb4-0242ac120003">#89-M - Feinte et passe</option>
+<option value="https://media.publicationsports.com/509/1f063282-b076-6cde-8063-0242ac120003">#90-M - L’affrontement</option>
+<option value="https://media.publicationsports.com/509/1f06327f-d7b5-6352-92be-0242ac120003">#92-M - D’un bout à l’autre</option>
+<option value="https://media.publicationsports.com/509/1f06327e-5904-6fe0-b213-0242ac120003">#93-M - Les échappées</option>
+<option value="https://media.publicationsports.com/509/1f06327c-d27d-6e5a-84e2-0242ac120003">#94-M - Lève la tête</option>
+<option value="https://media.publicationsports.com/509/1f063279-d6d5-6794-ac76-0242ac120003">#96-M - Vise la cible</option>
+<option value="https://media.publicationsports.com/509/1f063278-3cd4-6d3a-87b5-0242ac120003">#97-M - Dans le mille</option>
+<option value="https://media.publicationsports.com/509/1f063276-6135-6f78-8275-0242ac120003">#98-M - Le tiroir</option>
+<option value="https://media.publicationsports.com/509/1f063274-e3bd-6880-9a81-0242ac120003">#99-M - Le grand ménage</option>
+<option value="https://media.publicationsports.com/509/1f063271-4dcf-6100-9d42-0242ac120003">#100-M - Passe balayée revers</option>
+<option value="https://media.publicationsports.com/509/1f06326e-f533-628c-ad35-0242ac120003">#101-M - Passe et va</option>
+<option value="https://media.publicationsports.com/509/1f06326d-bfad-61e0-8742-0242ac120003">#102-M - Pousse-attrape</option>
+<option value="https://media.publicationsports.com/509/1f06326b-baa0-6712-b9b8-0242ac120003">#103-M - L’espion</option>
+<option value="https://media.publicationsports.com/509/1f063269-1367-60d8-b639-0242ac120003">#104-M - Tireur d’élite</option>
+<option value="https://media.publicationsports.com/509/1f063267-37b2-6066-a727-0242ac120003">#105-M - Tireur d’élite (Revers)</option>
+<option value="https://media.publicationsports.com/509/1f063264-dcde-64d4-92f5-0242ac120003">#106-M - La petite banane</option>
+<option value="https://media.publicationsports.com/509/1f063262-190c-692c-af11-0242ac120003">#107-M - Capture la rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06325f-ad9d-649a-a387-0242ac120003">#109-M - Protège le nid</option>
+<option value="https://media.publicationsports.com/509/1f06325d-8d9b-6022-9fd9-0242ac120003">#110-M - Les protecteurs de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063259-3fa9-62e6-90f5-0242ac120003">#130-T - La poursuite</option>
+<option value="https://media.publicationsports.com/509/1f063257-ba02-6012-91f2-0242ac120003">#131-T - Approche au porteur</option>
+<option value="https://media.publicationsports.com/509/1f063255-e3f8-651c-8e13-0242ac120003">#133-T - Bouledogue</option>
+<option value="https://media.publicationsports.com/509/1f063253-ff4f-6d6c-a5a0-0242ac120003">#134-T - Le démarquage du non-porteur</option>
+<option value="https://media.publicationsports.com/509/1f063250-cd37-6134-9c62-0242ac120003">#135-T - La chasse aux rondelles</option>
+<option value="https://media.publicationsports.com/509/1f06324e-99cd-6796-8944-0242ac120003">#136-T - La porte</option>
+<option value="https://media.publicationsports.com/509/1f06324b-0675-6e74-848a-0242ac120003">#138-T - Le vol du diamant</option>
+<option value="https://media.publicationsports.com/509/1f063248-05df-6346-b706-0242ac120003">#139-T - 2 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063243-7ba9-63ce-8f2e-0242ac120003">#150-JER - La prison (1 contre 1)</option>
+<option value="https://media.publicationsports.com/509/1f063241-d71f-61d8-ac50-0242ac120003">#152-JER - 1 contre 1 (support)</option>
+<option value="https://media.publicationsports.com/509/1f06323f-c2f3-6922-bce7-0242ac120003">#153-JER - 1 contre 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f06323d-3cc8-6714-840f-0242ac120003">#154-JER - 2 contre 2</option>
+<option value="https://media.publicationsports.com/509/1f06323a-a54f-6a88-985a-0242ac120003">#156-JER - 3 contre 3 en deux zones</option>
+<option value="https://media.publicationsports.com/509/1f063237-630f-641e-be11-0242ac120003">#157-JER - 4 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063235-3ddc-645a-9a16-0242ac120003">#158-JER - Jumping-jack</option>
+<option value="https://media.publicationsports.com/509/1f06322f-1a07-6eea-b474-0242ac120003">#162-JER - Mini Festival</option>
+<option value="https://media.publicationsports.com/509/1f063227-3d62-6834-a3ba-0242ac120003">#165-JER - 3 fois à 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063224-a6ee-68dc-85ed-0242ac120003">#166-JER - Étourdir le gardien</option>
+<option value="https://media.publicationsports.com/509/1f063220-8834-6aa8-9a7c-0242ac120003">#183-JC - Les rois de la passe</option>
+<option value="https://media.publicationsports.com/509/1f06321e-7982-675a-a966-0242ac120003">#184-JC - Rugby</option>
+<option value="https://media.publicationsports.com/509/1f063219-45e8-6ac0-ab30-0242ac120003">#185-JC - Soccer</option>
+<option value="https://media.publicationsports.com/509/1f063215-6380-6f1e-972e-0242ac120003">#187-JC - La liste des défis</option>
+<option value="https://media.publicationsports.com/509/1f063212-d94c-6afc-8bfe-0242ac120003">#188-JC - Ballon chasseur</option>
+<option value="https://media.publicationsports.com/509/1f063211-70ab-6468-9a1f-0242ac120003">#189-JC - Hockey fou</option>
+<option value="https://media.publicationsports.com/509/1f06320e-ee83-6186-80ae-0242ac120003">#190-JC - Patate chaude</option>
+<option value="https://media.publicationsports.com/509/1f0631bf-3826-62ca-a796-0242ac120003">#192-JC - La chasse</option>
+<option value="https://media.publicationsports.com/509/1f0631ba-135d-66a0-b2af-0242ac120003">#200-JD - Match 1/6 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b7-7249-6aea-873a-0242ac120003">#201-JD - Match 1/3 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-e12d-6e14-bc52-0242ac120003">#202-JD - Match 1/4 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b1-e97c-6a3c-8998-0242ac120003">#203-JD - Match 1/2 glace</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-9de1-6262-9696-0242ac120003">#204-JD - Hockey libre</option>
+      </select>
+      <div id="lienExercice3" class="lien"></div>
+    </div>
+    
+    <div class="bloc">
+      <h3>Atelier 4</h3>
+      <label>Nom des entraîneurs :</label>
+      <input type="text" id="noms4" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <label>Choisissez un exercice :</label>
+      <select id="exercice4" onchange="updateAll()">
+        <option value="">-- Sélectionner un exercice --</option>
+        <option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#00-Eval - Exercice d’évaluation MAHG 0</option>
+<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#01-Eval - Évaluation MAHG 1-1</option>
+<option value="https://media.publicationsports.com/509/1f060dab-7b93-63e2-8077-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#02-Eval - Évaluation MAHG 1-2</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-3640-60cc-a962-0242ac120003?_gl=1*1dgonfj*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#03-Eval - Évaluation MAHG 2-1</option>
+<option value="https://media.publicationsports.com/509/1f0631bc-9288-6234-ae28-0242ac120003?_gl=1*koosos*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#04-Eval - Évaluation MAHG 2-2</option>
+<option value="https://media.publicationsports.com/509/1f063213-c7a9-6056-8f51-0242ac120003">#05-Eval - Évaluation MAHG 2-3</option>
+<option value="https://media.publicationsports.com/509/1f063217-de7a-663c-b816-0242ac120003">#06-Eval - Évaluation MAHG 3-1</option>
+<option value="https://media.publicationsports.com/509/1f063221-b23c-6944-8988-0242ac120003">#07-Eval - Évaluation MAHG 3-2</option>
+<option value="https://media.publicationsports.com/509/1f063223-e01b-6db8-b6ef-0242ac120003">#08-Eval - Évaluation MAHG 3-3</option>
+<option value="https://media.publicationsports.com/509/1f06322c-4c78-6a4e-af17-0242ac120003">#09-Eval - Évaluation MAHG 4-1</option>
+<option value="https://media.publicationsports.com/509/1f060da9-41b9-68e4-91fa-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#1-S - Zambo dit</option>
+<option value="https://media.publicationsports.com/509/1f063190-d606-6870-8ee6-0242ac120003">#2-S - Le gardien du musée</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-1476-6b3c-ae67-0242ac120003">#3-S - Labyrinthe 6</option>
+<option value="https://media.publicationsports.com/509/1f06320b-b66b-6440-a3cb-0242ac120003">#4-S - La lutte</option>
+<option value="https://media.publicationsports.com/509/1f063215-bd0f-6a6c-99b0-0242ac120003">#5-S - Glace en lave</option>
+<option value="https://media.publicationsports.com/509/1f06321d-d469-6962-8f0f-0242ac120003">#6-S - Ballon marteau</option>
+<option value="https://media.publicationsports.com/509/1f063225-eafc-6abe-8752-0242ac120003">#8-S - Le chasse-neige</option>
+<option value="https://media.publicationsports.com/509/1f06322e-5f98-697e-9525-0242ac120003">#9-S - L’arrêt</option>
+<option value="https://media.publicationsports.com/509/1f06322f-dc7f-66ee-a861-0242ac120003">#10-S - 1-2-3 Soleil</option>
+<option value="https://media.publicationsports.com/509/1f063231-2e31-6a7c-912d-0242ac120003">#11-S - Course navette</option>
+<option value="https://media.publicationsports.com/509/1f063232-b9fc-6196-94ef-0242ac120003">#12-S - Transitions arrière</option>
+<option value="https://media.publicationsports.com/509/1f063234-fce3-6a34-81b5-0242ac120003">#13-S - Le champ d’astéroïdes</option>
+<option value="https://media.publicationsports.com/509/1f06323a-2091-6666-8e6d-0242ac120003">#14-S - Les obstacles</option>
+<option value="https://media.publicationsports.com/509/1f06323c-4df6-64b0-ac35-0242ac120003">#29-L - Le labyrinthe</option>
+<option value="https://media.publicationsports.com/509/1f06323e-547d-6098-ab97-0242ac120003">#30-L - Auto en panne</option>
+<option value="https://media.publicationsports.com/509/1f063240-7524-68f8-97bd-0242ac120003">#31-L - La planche à roulettes</option>
+<option value="https://media.publicationsports.com/509/1f063248-26e3-6038-93cb-0242ac120003">#33-L - Le jongleur</option>
+<option value="https://media.publicationsports.com/509/1f063243-36eb-60d4-ab6d-0242ac120003">#34-L - Le trésor</option>
+<option value="https://media.publicationsports.com/509/1f06324c-6304-61c6-bea0-0242ac120003">#35-L - Le zigzag</option>
+<option value="https://media.publicationsports.com/509/1f06324d-cb97-6156-9770-0242ac120003">#36-L - Les carres</option>
+<option value="https://media.publicationsports.com/509/1f06324f-3a4d-6ae0-a06f-0242ac120003">#37-L - Lumière Verte-Jaune-Rouge</option>
+<option value="https://media.publicationsports.com/509/1f0632a0-0295-61c4-a345-0242ac120003">#38-L - Tag anneau</option>
+<option value="https://media.publicationsports.com/509/1f063250-8ef9-6156-9c8b-0242ac120003">#40-L - Tic-tac-toe à relais</option>
+<option value="https://media.publicationsports.com/509/1f063256-c82c-6bac-9e9a-0242ac120003">#41-L - Le pingouin</option>
+<option value="https://media.publicationsports.com/509/1f063258-600e-67b2-ae46-0242ac120003">#43-L - Le chat et la souris</option>
+<option value="https://media.publicationsports.com/509/1f06325a-4119-6094-8f2a-0242ac120003">#44-L - L’échange</option>
+<option value="https://media.publicationsports.com/509/1f0632a1-bb7e-628e-9607-0242ac120003">#45-L - Les patins explosifs</option>
+<option value="https://media.publicationsports.com/509/1f06325b-b33f-6c76-aaec-0242ac120003">#46-L - Les quatre coins</option>
+<option value="https://media.publicationsports.com/509/1f06325d-6cd6-6d5a-88c8-0242ac120003">#49-L - Flip flop</option>
+<option value="https://media.publicationsports.com/509/1f063263-f67a-6b6e-ab70-0242ac120003">#50-L - L’arbre qui tombe</option>
+<option value="https://media.publicationsports.com/509/1f063265-3005-61f8-a5c3-0242ac120003">#51-L - Tag face à face</option>
+<option value="https://media.publicationsports.com/509/1f063266-db37-6836-add1-0242ac120003">#52-L - Chauffeur d’autobus</option>
+<option value="https://media.publicationsports.com/509/1f063268-cc53-63e0-b5bd-0242ac120003">#53-L - Circuit 1</option>
+<option value="https://media.publicationsports.com/509/1f06326a-21a4-6398-b0f1-0242ac120003">#54-L - Course en 8</option>
+<option value="https://media.publicationsports.com/509/1f06326b-53b9-60a8-ba03-0242ac120003">#55-L - La piste de course</option>
+<option value="https://media.publicationsports.com/509/1f06326c-a24c-6ef8-8181-0242ac120003">#56-L - Tag 360</option>
+<option value="https://media.publicationsports.com/509/1f063274-b7cf-6fc0-92f1-0242ac120003">#57-L - Le gâteau</option>
+<option value="https://media.publicationsports.com/509/1f063276-2d26-6cb4-80d7-0242ac120003">#58-L - Les croisements</option>
+<option value="https://media.publicationsports.com/509/1f063277-eea0-67c2-92f2-0242ac120003">#59-L - L’accélération croisée</option>
+<option value="https://media.publicationsports.com/509/1f063279-2eca-655e-92ed-0242ac120003">#60-L - La rondelle musicale</option>
+<option value="https://media.publicationsports.com/509/1f06327b-8f13-6454-92ab-0242ac120003">#62-L - La poussée arrière</option>
+<option value="https://media.publicationsports.com/509/1f0632a6-1cef-6bfe-be49-0242ac120003">#63-L - Le démarreur arrière</option>
+<option value="https://media.publicationsports.com/509/1f06327d-3107-6df4-b530-0242ac120003">#64-L - Tag reculons</option>
+<option value="https://media.publicationsports.com/509/1f06327e-c4bb-66c6-b1e8-0242ac120003">#65-L - Tic-tac-toe à reculons</option>
+<option value="https://media.publicationsports.com/509/1f063280-6c05-6a0c-864b-0242ac120003">#66-L - Départ arrière</option>
+<option value="https://media.publicationsports.com/509/1f063281-dc8d-65e4-a1c6-0242ac120003">#67-L - La remorqueuse</option>
+<option value="https://media.publicationsports.com/509/1f063287-3885-64b4-9194-0242ac120003">#68-L - Le grand pivot</option>
+<option value="https://media.publicationsports.com/509/1f063288-d50a-64f0-8999-0242ac120003">#69-L - Circuit 2</option>
+<option value="https://media.publicationsports.com/509/1f06328a-d43a-6d7a-a585-0242ac120003">#70-L - La fontaine</option>
+<option value="https://media.publicationsports.com/509/1f06328c-8833-6e2a-aa03-0242ac120003">#71-L - Course d’agilité en 8</option>
+<option value="https://media.publicationsports.com/509/1f06328d-d8ff-6560-a8a8-0242ac120003">#72-L - Le petit train</option>
+<option value="https://media.publicationsports.com/509/1f06328f-00da-6ee4-96e5-0242ac120003">#80-M - Le facteur</option>
+<option value="https://media.publicationsports.com/509/1f06328d-fb1a-6de8-b079-0242ac120003">#81-M - Le transporteur</option>
+<option value="https://media.publicationsports.com/509/1f06328c-f4c6-6dbc-bafb-0242ac120003">#82-M - La course à relais avec rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06328b-149a-6456-a44d-0242ac120003">#83-M - Parcours 5</option>
+<option value="https://media.publicationsports.com/509/1f063289-cb6f-6d2c-8086-0242ac120003">#84-M - Le voleur de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063288-37f0-63fe-8487-0242ac120003">#85-M - La fosse aux requins</option>
+<option value="https://media.publicationsports.com/509/1f063287-263b-6fce-8ae7-0242ac120003">#86-M - L’horloge</option>
+<option value="https://media.publicationsports.com/509/1f063286-0c90-6828-a48b-0242ac120003">#87-M - Méli-mélo</option>
+<option value="https://media.publicationsports.com/509/1f063284-f89e-6aaa-a649-0242ac120003">#88-M - Le passage secret</option>
+<option value="https://media.publicationsports.com/509/1f063283-c0f3-630e-8bb4-0242ac120003">#89-M - Feinte et passe</option>
+<option value="https://media.publicationsports.com/509/1f063282-b076-6cde-8063-0242ac120003">#90-M - L’affrontement</option>
+<option value="https://media.publicationsports.com/509/1f06327f-d7b5-6352-92be-0242ac120003">#92-M - D’un bout à l’autre</option>
+<option value="https://media.publicationsports.com/509/1f06327e-5904-6fe0-b213-0242ac120003">#93-M - Les échappées</option>
+<option value="https://media.publicationsports.com/509/1f06327c-d27d-6e5a-84e2-0242ac120003">#94-M - Lève la tête</option>
+<option value="https://media.publicationsports.com/509/1f063279-d6d5-6794-ac76-0242ac120003">#96-M - Vise la cible</option>
+<option value="https://media.publicationsports.com/509/1f063278-3cd4-6d3a-87b5-0242ac120003">#97-M - Dans le mille</option>
+<option value="https://media.publicationsports.com/509/1f063276-6135-6f78-8275-0242ac120003">#98-M - Le tiroir</option>
+<option value="https://media.publicationsports.com/509/1f063274-e3bd-6880-9a81-0242ac120003">#99-M - Le grand ménage</option>
+<option value="https://media.publicationsports.com/509/1f063271-4dcf-6100-9d42-0242ac120003">#100-M - Passe balayée revers</option>
+<option value="https://media.publicationsports.com/509/1f06326e-f533-628c-ad35-0242ac120003">#101-M - Passe et va</option>
+<option value="https://media.publicationsports.com/509/1f06326d-bfad-61e0-8742-0242ac120003">#102-M - Pousse-attrape</option>
+<option value="https://media.publicationsports.com/509/1f06326b-baa0-6712-b9b8-0242ac120003">#103-M - L’espion</option>
+<option value="https://media.publicationsports.com/509/1f063269-1367-60d8-b639-0242ac120003">#104-M - Tireur d’élite</option>
+<option value="https://media.publicationsports.com/509/1f063267-37b2-6066-a727-0242ac120003">#105-M - Tireur d’élite (Revers)</option>
+<option value="https://media.publicationsports.com/509/1f063264-dcde-64d4-92f5-0242ac120003">#106-M - La petite banane</option>
+<option value="https://media.publicationsports.com/509/1f063262-190c-692c-af11-0242ac120003">#107-M - Capture la rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06325f-ad9d-649a-a387-0242ac120003">#109-M - Protège le nid</option>
+<option value="https://media.publicationsports.com/509/1f06325d-8d9b-6022-9fd9-0242ac120003">#110-M - Les protecteurs de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063259-3fa9-62e6-90f5-0242ac120003">#130-T - La poursuite</option>
+<option value="https://media.publicationsports.com/509/1f063257-ba02-6012-91f2-0242ac120003">#131-T - Approche au porteur</option>
+<option value="https://media.publicationsports.com/509/1f063255-e3f8-651c-8e13-0242ac120003">#133-T - Bouledogue</option>
+<option value="https://media.publicationsports.com/509/1f063253-ff4f-6d6c-a5a0-0242ac120003">#134-T - Le démarquage du non-porteur</option>
+<option value="https://media.publicationsports.com/509/1f063250-cd37-6134-9c62-0242ac120003">#135-T - La chasse aux rondelles</option>
+<option value="https://media.publicationsports.com/509/1f06324e-99cd-6796-8944-0242ac120003">#136-T - La porte</option>
+<option value="https://media.publicationsports.com/509/1f06324b-0675-6e74-848a-0242ac120003">#138-T - Le vol du diamant</option>
+<option value="https://media.publicationsports.com/509/1f063248-05df-6346-b706-0242ac120003">#139-T - 2 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063243-7ba9-63ce-8f2e-0242ac120003">#150-JER - La prison (1 contre 1)</option>
+<option value="https://media.publicationsports.com/509/1f063241-d71f-61d8-ac50-0242ac120003">#152-JER - 1 contre 1 (support)</option>
+<option value="https://media.publicationsports.com/509/1f06323f-c2f3-6922-bce7-0242ac120003">#153-JER - 1 contre 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f06323d-3cc8-6714-840f-0242ac120003">#154-JER - 2 contre 2</option>
+<option value="https://media.publicationsports.com/509/1f06323a-a54f-6a88-985a-0242ac120003">#156-JER - 3 contre 3 en deux zones</option>
+<option value="https://media.publicationsports.com/509/1f063237-630f-641e-be11-0242ac120003">#157-JER - 4 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063235-3ddc-645a-9a16-0242ac120003">#158-JER - Jumping-jack</option>
+<option value="https://media.publicationsports.com/509/1f06322f-1a07-6eea-b474-0242ac120003">#162-JER - Mini Festival</option>
+<option value="https://media.publicationsports.com/509/1f063227-3d62-6834-a3ba-0242ac120003">#165-JER - 3 fois à 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063224-a6ee-68dc-85ed-0242ac120003">#166-JER - Étourdir le gardien</option>
+<option value="https://media.publicationsports.com/509/1f063220-8834-6aa8-9a7c-0242ac120003">#183-JC - Les rois de la passe</option>
+<option value="https://media.publicationsports.com/509/1f06321e-7982-675a-a966-0242ac120003">#184-JC - Rugby</option>
+<option value="https://media.publicationsports.com/509/1f063219-45e8-6ac0-ab30-0242ac120003">#185-JC - Soccer</option>
+<option value="https://media.publicationsports.com/509/1f063215-6380-6f1e-972e-0242ac120003">#187-JC - La liste des défis</option>
+<option value="https://media.publicationsports.com/509/1f063212-d94c-6afc-8bfe-0242ac120003">#188-JC - Ballon chasseur</option>
+<option value="https://media.publicationsports.com/509/1f063211-70ab-6468-9a1f-0242ac120003">#189-JC - Hockey fou</option>
+<option value="https://media.publicationsports.com/509/1f06320e-ee83-6186-80ae-0242ac120003">#190-JC - Patate chaude</option>
+<option value="https://media.publicationsports.com/509/1f0631bf-3826-62ca-a796-0242ac120003">#192-JC - La chasse</option>
+<option value="https://media.publicationsports.com/509/1f0631ba-135d-66a0-b2af-0242ac120003">#200-JD - Match 1/6 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b7-7249-6aea-873a-0242ac120003">#201-JD - Match 1/3 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-e12d-6e14-bc52-0242ac120003">#202-JD - Match 1/4 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b1-e97c-6a3c-8998-0242ac120003">#203-JD - Match 1/2 glace</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-9de1-6262-9696-0242ac120003">#204-JD - Hockey libre</option>
+      </select>
+      <div id="lienExercice4" class="lien"></div>
+    </div>
+    
+    <div class="bloc">
+      <h3>Atelier 5</h3>
+      <label>Nom des entraîneurs :</label>
+      <input type="text" id="noms5" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <label>Choisissez un exercice :</label>
+      <select id="exercice5" onchange="updateAll()">
+        <option value="">-- Sélectionner un exercice --</option>
+        <option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#00-Eval - Exercice d’évaluation MAHG 0</option>
+<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#01-Eval - Évaluation MAHG 1-1</option>
+<option value="https://media.publicationsports.com/509/1f060dab-7b93-63e2-8077-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#02-Eval - Évaluation MAHG 1-2</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-3640-60cc-a962-0242ac120003?_gl=1*1dgonfj*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#03-Eval - Évaluation MAHG 2-1</option>
+<option value="https://media.publicationsports.com/509/1f0631bc-9288-6234-ae28-0242ac120003?_gl=1*koosos*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI4NTkxMjgkbzY3JGcxJHQxNzUyODU5MjM1JGo2MCRsMCRoMA..">#04-Eval - Évaluation MAHG 2-2</option>
+<option value="https://media.publicationsports.com/509/1f063213-c7a9-6056-8f51-0242ac120003">#05-Eval - Évaluation MAHG 2-3</option>
+<option value="https://media.publicationsports.com/509/1f063217-de7a-663c-b816-0242ac120003">#06-Eval - Évaluation MAHG 3-1</option>
+<option value="https://media.publicationsports.com/509/1f063221-b23c-6944-8988-0242ac120003">#07-Eval - Évaluation MAHG 3-2</option>
+<option value="https://media.publicationsports.com/509/1f063223-e01b-6db8-b6ef-0242ac120003">#08-Eval - Évaluation MAHG 3-3</option>
+<option value="https://media.publicationsports.com/509/1f06322c-4c78-6a4e-af17-0242ac120003">#09-Eval - Évaluation MAHG 4-1</option>
+<option value="https://media.publicationsports.com/509/1f060da9-41b9-68e4-91fa-0242ac120003?_gl=1*19cr92g*_ga*MTIwODgxMTM1OC4xNzQwNTA2MTUx*_ga_LNPH6KZP0Q*czE3NTI2NzA3MDckbzU4JGcxJHQxNzUyNjcyMjAyJGo1NCRsMCRoMA..">#1-S - Zambo dit</option>
+<option value="https://media.publicationsports.com/509/1f063190-d606-6870-8ee6-0242ac120003">#2-S - Le gardien du musée</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-1476-6b3c-ae67-0242ac120003">#3-S - Labyrinthe 6</option>
+<option value="https://media.publicationsports.com/509/1f06320b-b66b-6440-a3cb-0242ac120003">#4-S - La lutte</option>
+<option value="https://media.publicationsports.com/509/1f063215-bd0f-6a6c-99b0-0242ac120003">#5-S - Glace en lave</option>
+<option value="https://media.publicationsports.com/509/1f06321d-d469-6962-8f0f-0242ac120003">#6-S - Ballon marteau</option>
+<option value="https://media.publicationsports.com/509/1f063225-eafc-6abe-8752-0242ac120003">#8-S - Le chasse-neige</option>
+<option value="https://media.publicationsports.com/509/1f06322e-5f98-697e-9525-0242ac120003">#9-S - L’arrêt</option>
+<option value="https://media.publicationsports.com/509/1f06322f-dc7f-66ee-a861-0242ac120003">#10-S - 1-2-3 Soleil</option>
+<option value="https://media.publicationsports.com/509/1f063231-2e31-6a7c-912d-0242ac120003">#11-S - Course navette</option>
+<option value="https://media.publicationsports.com/509/1f063232-b9fc-6196-94ef-0242ac120003">#12-S - Transitions arrière</option>
+<option value="https://media.publicationsports.com/509/1f063234-fce3-6a34-81b5-0242ac120003">#13-S - Le champ d’astéroïdes</option>
+<option value="https://media.publicationsports.com/509/1f06323a-2091-6666-8e6d-0242ac120003">#14-S - Les obstacles</option>
+<option value="https://media.publicationsports.com/509/1f06323c-4df6-64b0-ac35-0242ac120003">#29-L - Le labyrinthe</option>
+<option value="https://media.publicationsports.com/509/1f06323e-547d-6098-ab97-0242ac120003">#30-L - Auto en panne</option>
+<option value="https://media.publicationsports.com/509/1f063240-7524-68f8-97bd-0242ac120003">#31-L - La planche à roulettes</option>
+<option value="https://media.publicationsports.com/509/1f063248-26e3-6038-93cb-0242ac120003">#33-L - Le jongleur</option>
+<option value="https://media.publicationsports.com/509/1f063243-36eb-60d4-ab6d-0242ac120003">#34-L - Le trésor</option>
+<option value="https://media.publicationsports.com/509/1f06324c-6304-61c6-bea0-0242ac120003">#35-L - Le zigzag</option>
+<option value="https://media.publicationsports.com/509/1f06324d-cb97-6156-9770-0242ac120003">#36-L - Les carres</option>
+<option value="https://media.publicationsports.com/509/1f06324f-3a4d-6ae0-a06f-0242ac120003">#37-L - Lumière Verte-Jaune-Rouge</option>
+<option value="https://media.publicationsports.com/509/1f0632a0-0295-61c4-a345-0242ac120003">#38-L - Tag anneau</option>
+<option value="https://media.publicationsports.com/509/1f063250-8ef9-6156-9c8b-0242ac120003">#40-L - Tic-tac-toe à relais</option>
+<option value="https://media.publicationsports.com/509/1f063256-c82c-6bac-9e9a-0242ac120003">#41-L - Le pingouin</option>
+<option value="https://media.publicationsports.com/509/1f063258-600e-67b2-ae46-0242ac120003">#43-L - Le chat et la souris</option>
+<option value="https://media.publicationsports.com/509/1f06325a-4119-6094-8f2a-0242ac120003">#44-L - L’échange</option>
+<option value="https://media.publicationsports.com/509/1f0632a1-bb7e-628e-9607-0242ac120003">#45-L - Les patins explosifs</option>
+<option value="https://media.publicationsports.com/509/1f06325b-b33f-6c76-aaec-0242ac120003">#46-L - Les quatre coins</option>
+<option value="https://media.publicationsports.com/509/1f06325d-6cd6-6d5a-88c8-0242ac120003">#49-L - Flip flop</option>
+<option value="https://media.publicationsports.com/509/1f063263-f67a-6b6e-ab70-0242ac120003">#50-L - L’arbre qui tombe</option>
+<option value="https://media.publicationsports.com/509/1f063265-3005-61f8-a5c3-0242ac120003">#51-L - Tag face à face</option>
+<option value="https://media.publicationsports.com/509/1f063266-db37-6836-add1-0242ac120003">#52-L - Chauffeur d’autobus</option>
+<option value="https://media.publicationsports.com/509/1f063268-cc53-63e0-b5bd-0242ac120003">#53-L - Circuit 1</option>
+<option value="https://media.publicationsports.com/509/1f06326a-21a4-6398-b0f1-0242ac120003">#54-L - Course en 8</option>
+<option value="https://media.publicationsports.com/509/1f06326b-53b9-60a8-ba03-0242ac120003">#55-L - La piste de course</option>
+<option value="https://media.publicationsports.com/509/1f06326c-a24c-6ef8-8181-0242ac120003">#56-L - Tag 360</option>
+<option value="https://media.publicationsports.com/509/1f063274-b7cf-6fc0-92f1-0242ac120003">#57-L - Le gâteau</option>
+<option value="https://media.publicationsports.com/509/1f063276-2d26-6cb4-80d7-0242ac120003">#58-L - Les croisements</option>
+<option value="https://media.publicationsports.com/509/1f063277-eea0-67c2-92f2-0242ac120003">#59-L - L’accélération croisée</option>
+<option value="https://media.publicationsports.com/509/1f063279-2eca-655e-92ed-0242ac120003">#60-L - La rondelle musicale</option>
+<option value="https://media.publicationsports.com/509/1f06327b-8f13-6454-92ab-0242ac120003">#62-L - La poussée arrière</option>
+<option value="https://media.publicationsports.com/509/1f0632a6-1cef-6bfe-be49-0242ac120003">#63-L - Le démarreur arrière</option>
+<option value="https://media.publicationsports.com/509/1f06327d-3107-6df4-b530-0242ac120003">#64-L - Tag reculons</option>
+<option value="https://media.publicationsports.com/509/1f06327e-c4bb-66c6-b1e8-0242ac120003">#65-L - Tic-tac-toe à reculons</option>
+<option value="https://media.publicationsports.com/509/1f063280-6c05-6a0c-864b-0242ac120003">#66-L - Départ arrière</option>
+<option value="https://media.publicationsports.com/509/1f063281-dc8d-65e4-a1c6-0242ac120003">#67-L - La remorqueuse</option>
+<option value="https://media.publicationsports.com/509/1f063287-3885-64b4-9194-0242ac120003">#68-L - Le grand pivot</option>
+<option value="https://media.publicationsports.com/509/1f063288-d50a-64f0-8999-0242ac120003">#69-L - Circuit 2</option>
+<option value="https://media.publicationsports.com/509/1f06328a-d43a-6d7a-a585-0242ac120003">#70-L - La fontaine</option>
+<option value="https://media.publicationsports.com/509/1f06328c-8833-6e2a-aa03-0242ac120003">#71-L - Course d’agilité en 8</option>
+<option value="https://media.publicationsports.com/509/1f06328d-d8ff-6560-a8a8-0242ac120003">#72-L - Le petit train</option>
+<option value="https://media.publicationsports.com/509/1f06328f-00da-6ee4-96e5-0242ac120003">#80-M - Le facteur</option>
+<option value="https://media.publicationsports.com/509/1f06328d-fb1a-6de8-b079-0242ac120003">#81-M - Le transporteur</option>
+<option value="https://media.publicationsports.com/509/1f06328c-f4c6-6dbc-bafb-0242ac120003">#82-M - La course à relais avec rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06328b-149a-6456-a44d-0242ac120003">#83-M - Parcours 5</option>
+<option value="https://media.publicationsports.com/509/1f063289-cb6f-6d2c-8086-0242ac120003">#84-M - Le voleur de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063288-37f0-63fe-8487-0242ac120003">#85-M - La fosse aux requins</option>
+<option value="https://media.publicationsports.com/509/1f063287-263b-6fce-8ae7-0242ac120003">#86-M - L’horloge</option>
+<option value="https://media.publicationsports.com/509/1f063286-0c90-6828-a48b-0242ac120003">#87-M - Méli-mélo</option>
+<option value="https://media.publicationsports.com/509/1f063284-f89e-6aaa-a649-0242ac120003">#88-M - Le passage secret</option>
+<option value="https://media.publicationsports.com/509/1f063283-c0f3-630e-8bb4-0242ac120003">#89-M - Feinte et passe</option>
+<option value="https://media.publicationsports.com/509/1f063282-b076-6cde-8063-0242ac120003">#90-M - L’affrontement</option>
+<option value="https://media.publicationsports.com/509/1f06327f-d7b5-6352-92be-0242ac120003">#92-M - D’un bout à l’autre</option>
+<option value="https://media.publicationsports.com/509/1f06327e-5904-6fe0-b213-0242ac120003">#93-M - Les échappées</option>
+<option value="https://media.publicationsports.com/509/1f06327c-d27d-6e5a-84e2-0242ac120003">#94-M - Lève la tête</option>
+<option value="https://media.publicationsports.com/509/1f063279-d6d5-6794-ac76-0242ac120003">#96-M - Vise la cible</option>
+<option value="https://media.publicationsports.com/509/1f063278-3cd4-6d3a-87b5-0242ac120003">#97-M - Dans le mille</option>
+<option value="https://media.publicationsports.com/509/1f063276-6135-6f78-8275-0242ac120003">#98-M - Le tiroir</option>
+<option value="https://media.publicationsports.com/509/1f063274-e3bd-6880-9a81-0242ac120003">#99-M - Le grand ménage</option>
+<option value="https://media.publicationsports.com/509/1f063271-4dcf-6100-9d42-0242ac120003">#100-M - Passe balayée revers</option>
+<option value="https://media.publicationsports.com/509/1f06326e-f533-628c-ad35-0242ac120003">#101-M - Passe et va</option>
+<option value="https://media.publicationsports.com/509/1f06326d-bfad-61e0-8742-0242ac120003">#102-M - Pousse-attrape</option>
+<option value="https://media.publicationsports.com/509/1f06326b-baa0-6712-b9b8-0242ac120003">#103-M - L’espion</option>
+<option value="https://media.publicationsports.com/509/1f063269-1367-60d8-b639-0242ac120003">#104-M - Tireur d’élite</option>
+<option value="https://media.publicationsports.com/509/1f063267-37b2-6066-a727-0242ac120003">#105-M - Tireur d’élite (Revers)</option>
+<option value="https://media.publicationsports.com/509/1f063264-dcde-64d4-92f5-0242ac120003">#106-M - La petite banane</option>
+<option value="https://media.publicationsports.com/509/1f063262-190c-692c-af11-0242ac120003">#107-M - Capture la rondelle</option>
+<option value="https://media.publicationsports.com/509/1f06325f-ad9d-649a-a387-0242ac120003">#109-M - Protège le nid</option>
+<option value="https://media.publicationsports.com/509/1f06325d-8d9b-6022-9fd9-0242ac120003">#110-M - Les protecteurs de rondelle</option>
+<option value="https://media.publicationsports.com/509/1f063259-3fa9-62e6-90f5-0242ac120003">#130-T - La poursuite</option>
+<option value="https://media.publicationsports.com/509/1f063257-ba02-6012-91f2-0242ac120003">#131-T - Approche au porteur</option>
+<option value="https://media.publicationsports.com/509/1f063255-e3f8-651c-8e13-0242ac120003">#133-T - Bouledogue</option>
+<option value="https://media.publicationsports.com/509/1f063253-ff4f-6d6c-a5a0-0242ac120003">#134-T - Le démarquage du non-porteur</option>
+<option value="https://media.publicationsports.com/509/1f063250-cd37-6134-9c62-0242ac120003">#135-T - La chasse aux rondelles</option>
+<option value="https://media.publicationsports.com/509/1f06324e-99cd-6796-8944-0242ac120003">#136-T - La porte</option>
+<option value="https://media.publicationsports.com/509/1f06324b-0675-6e74-848a-0242ac120003">#138-T - Le vol du diamant</option>
+<option value="https://media.publicationsports.com/509/1f063248-05df-6346-b706-0242ac120003">#139-T - 2 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063243-7ba9-63ce-8f2e-0242ac120003">#150-JER - La prison (1 contre 1)</option>
+<option value="https://media.publicationsports.com/509/1f063241-d71f-61d8-ac50-0242ac120003">#152-JER - 1 contre 1 (support)</option>
+<option value="https://media.publicationsports.com/509/1f06323f-c2f3-6922-bce7-0242ac120003">#153-JER - 1 contre 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f06323d-3cc8-6714-840f-0242ac120003">#154-JER - 2 contre 2</option>
+<option value="https://media.publicationsports.com/509/1f06323a-a54f-6a88-985a-0242ac120003">#156-JER - 3 contre 3 en deux zones</option>
+<option value="https://media.publicationsports.com/509/1f063237-630f-641e-be11-0242ac120003">#157-JER - 4 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063235-3ddc-645a-9a16-0242ac120003">#158-JER - Jumping-jack</option>
+<option value="https://media.publicationsports.com/509/1f06322f-1a07-6eea-b474-0242ac120003">#162-JER - Mini Festival</option>
+<option value="https://media.publicationsports.com/509/1f063227-3d62-6834-a3ba-0242ac120003">#165-JER - 3 fois à 1 contre 1</option>
+<option value="https://media.publicationsports.com/509/1f063224-a6ee-68dc-85ed-0242ac120003">#166-JER - Étourdir le gardien</option>
+<option value="https://media.publicationsports.com/509/1f063220-8834-6aa8-9a7c-0242ac120003">#183-JC - Les rois de la passe</option>
+<option value="https://media.publicationsports.com/509/1f06321e-7982-675a-a966-0242ac120003">#184-JC - Rugby</option>
+<option value="https://media.publicationsports.com/509/1f063219-45e8-6ac0-ab30-0242ac120003">#185-JC - Soccer</option>
+<option value="https://media.publicationsports.com/509/1f063215-6380-6f1e-972e-0242ac120003">#187-JC - La liste des défis</option>
+<option value="https://media.publicationsports.com/509/1f063212-d94c-6afc-8bfe-0242ac120003">#188-JC - Ballon chasseur</option>
+<option value="https://media.publicationsports.com/509/1f063211-70ab-6468-9a1f-0242ac120003">#189-JC - Hockey fou</option>
+<option value="https://media.publicationsports.com/509/1f06320e-ee83-6186-80ae-0242ac120003">#190-JC - Patate chaude</option>
+<option value="https://media.publicationsports.com/509/1f0631bf-3826-62ca-a796-0242ac120003">#192-JC - La chasse</option>
+<option value="https://media.publicationsports.com/509/1f0631ba-135d-66a0-b2af-0242ac120003">#200-JD - Match 1/6 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b7-7249-6aea-873a-0242ac120003">#201-JD - Match 1/3 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b4-e12d-6e14-bc52-0242ac120003">#202-JD - Match 1/4 de glace</option>
+<option value="https://media.publicationsports.com/509/1f0631b1-e97c-6a3c-8998-0242ac120003">#203-JD - Match 1/2 glace</option>
+<option value="https://media.publicationsports.com/509/1f0631ac-9de1-6262-9696-0242ac120003">#204-JD - Hockey libre</option>
+      </select>
+      <div id="lienExercice5" class="lien"></div>
+    </div>
+    
+<div class="bloc">
+  <h3>Gardiens de but</h3>
+  <label>Nom de l’entraîneur :</label>
+  <input type="text" id="nomsGB" oninput="updateAll()" placeholder="Ex: Mathieu">
+  <label>Choisissez un exercice :</label>
   <select id="exerciceGB" onchange="updateAll()">
-    <option value="">Sélectionner un exercice</option>
+    <option value="">-- Sélectionner un exercice --</option>
     <option value="https://media.publicationsports.com/509/1f063ea6-4239-6502-ac15-0242ac120003">GB - Leçon 1</option>
-    <option value="https://media.publicationsports.com/509/1f063ea7-0236-65da-b109-0242ac120003">GB - Leçon 2</option>
-    <option value="https://media.publicationsports.com/509/1f063ea7-9291-64ea-bb9a-0242ac120003">GB - Leçon 3</option>
-    <option value="https://media.publicationsports.com/509/1f063ea8-27f6-6d6e-bd47-0242ac120003">GB - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063ea7-0236-65da-b109-0242ac120003">GB - Leçon 2</option>
+<option value="https://media.publicationsports.com/509/1f063ea7-9291-64ea-bb9a-0242ac120003">GB - Leçon 3</option>
+<option value="https://media.publicationsports.com/509/1f063ea8-27f6-6d6e-bd47-0242ac120003">GB - Leçon 4</option>
+<option value="https://media.publicationsports.com/509/1f063ea8-bb92-68fc-9a10-0242ac120003">GB - Leçon 5</option>
+<option value="https://media.publicationsports.com/509/1f063ea9-3f7a-6a8e-886a-0242ac120003">GB - Leçon 6</option>
+<option value="https://media.publicationsports.com/509/1f063ea9-c3c3-6552-9517-0242ac120003">GB - Leçon 7</option>
+<option value="https://media.publicationsports.com/509/1f063eaa-40ca-68f2-8cbd-0242ac120003">GB - Leçon 8</option>
+<option value="https://media.publicationsports.com/509/1f063eaa-bb0b-6a44-a971-0242ac120003">GB - Leçon 9</option>
+<option value="https://media.publicationsports.com/509/1f063eab-3995-63c4-a8c3-0242ac120003">GB - Leçon 10</option>
+<option value="https://media.publicationsports.com/509/1f063eaf-1f71-6156-9385-0242ac120003">GB - Leçon 11</option>
+<option value="https://media.publicationsports.com/509/1f063eaf-9897-68aa-afed-0242ac120003">GB - Leçon 12</option>
+<option value="https://media.publicationsports.com/509/1f063eb0-20dd-6a48-90e2-0242ac120003">GB - Leçon 13</option>
+<option value="https://media.publicationsports.com/509/1f063eb0-ea86-67f0-9adb-0242ac120003">GB - Leçon 14</option>
+<option value="https://media.publicationsports.com/509/1f063eb1-6a97-6228-8506-0242ac120003">GB - Leçon 15</option>
+<option value="https://media.publicationsports.com/509/1f063eb4-36ce-65d8-8382-0242ac120003">GB - Leçon 16</option>
+<option value="https://media.publicationsports.com/509/1f063eb4-b475-6acc-bada-0242ac120003">GB - Leçon 17</option>
+<option value="https://media.publicationsports.com/509/1f063eb2-21d8-6e00-b960-0242ac120003">GB - Leçon 18</option>
+<option value="https://media.publicationsports.com/509/1f063eb2-be2b-6834-a1d6-0242ac120003">GB - Leçon 19</option>
+<option value="https://media.publicationsports.com/509/1f063eb3-527c-69ca-af28-0242ac120003">GB - Leçon 20</option>
+<option value="https://media.publicationsports.com/509/1f063eba-2f2a-6cfe-aad5-0242ac120003">GB - Leçon 21</option>
+<option value="https://media.publicationsports.com/509/1f063eba-a8c9-6aec-ae10-0242ac120003">GB - Leçon 22</option>
+<option value="https://media.publicationsports.com/509/1f063ebb-2854-6b7c-8a1c-0242ac120003">GB - Leçon 23</option>
+<option value="https://media.publicationsports.com/509/1f063ebb-a71c-6dc4-9745-0242ac120003">GB - Leçon 24</option>
+<option value="https://media.publicationsports.com/509/1f063ebc-254d-664e-8c7d-0242ac120003">GB - Leçon 25</option>
+<option value="https://media.publicationsports.com/509/1f063ebc-c5a4-64ee-9e31-0242ac120003">GB - Leçon 26</option>
+<option value="https://media.publicationsports.com/509/1f063ebd-4abe-65b2-a3e9-0242ac120003">GB - Leçon 27</option>
+<option value="https://media.publicationsports.com/509/1f063ebd-bb84-6148-8954-0242ac120003">GB - Leçon 28</option>
+<option value="https://media.publicationsports.com/509/1f063ebe-2aed-64d0-bc87-0242ac120003">GB - Leçon 29</option>
+<option value="https://media.publicationsports.com/509/1f063ebe-a356-6002-9229-0242ac120003">GB - Leçon 30</option>
+<option value="https://media.publicationsports.com/509/1f063ec1-57a6-64ce-8291-0242ac120003">GB - Leçon 31</option>
+<option value="https://media.publicationsports.com/509/1f063ec1-c2a6-668e-869a-0242ac120003">GB - Leçon 32</option>
+<option value="https://media.publicationsports.com/509/1f063ec2-2af8-6c3c-b905-0242ac120003">GB - Leçon 33</option>
+<option value="https://media.publicationsports.com/509/1f063ec2-8b39-6024-ba96-0242ac120003">GB - Leçon 34</option>
+<option value="https://media.publicationsports.com/509/1f063ec2-f89e-6e48-9052-0242ac120003">GB - Leçon 35</option>
+<option value="https://media.publicationsports.com/509/1f063ec3-9259-6358-a463-0242ac120003">GB - Leçon 36</option>
+<option value="https://media.publicationsports.com/509/1f063ec4-1aef-6122-8cba-0242ac120003">GB - Leçon 37</option>
+<option value="https://media.publicationsports.com/509/1f063ec4-90fe-6b56-82bb-0242ac120003">GB - Leçon 38</option>
+<option value="https://media.publicationsports.com/509/1f063ec5-32b1-6728-afc0-0242ac120003">GB - Leçon 39</option>
+<option value="https://media.publicationsports.com/509/1f063ec5-ad43-69b4-9f18-0242ac120003">GB - Leçon 40</option>
   </select>
-  <p id="lienExerciceGB"></p>
+  <div id="lienExerciceGB" class="lien"></div>
+</div>
 
-  <!-- Message généré -->
-  <div id="zoneMessage"></div>
+<h2>3. Message à copier-coller</h2>
+<div id="zoneMessage"></div>
 
-  <script>
-    const exercicesOptions = `
-<option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003">#00-Eval - Exercice d’évaluation MAHG 0</option>
-<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003">#01-Eval - Évaluation MAHG 1</option>
-<option value="https://media.publicationsports.com/509/1f060da7-a46c-675c-9ad4-0242ac120003">#02-Eval - Évaluation MAHG 2</option>
-`;
+<script>
+function updateAll() {
+  const leconUrl = document.getElementById('selectLecon').value;
+  document.getElementById('lienLecon').innerHTML = leconUrl ? '<a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a>' : '';
 
-    for (let i = 1; i <= 5; i++) {
-      const container = document.getElementById("ateliers");
-      const section = document.createElement("div");
-      section.innerHTML = `
-        <label>Atelier ${i} – Noms des entraîneurs</label>
-        <input type="text" id="noms${i}" oninput="updateAll()">
-        <select id="exercice${i}" onchange="updateAll()">
-          <option value="">Sélectionner un exercice</option>
-          ${exercicesOptions}
-        </select>
-        <p id="lienExercice${i}"></p>
-      `;
-      container.appendChild(section);
+  let ateliers = '';
+  for (let i = 1; i <= 5; i++) {
+    const noms = document.getElementById('noms' + i).value;
+    const lien = document.getElementById('exercice' + i).value;
+    document.getElementById('lienExercice' + i).innerHTML = lien ? '<a href="' + lien + '" target="_blank">' + lien + '</a>' : '';
+    if (noms && lien) {
+      ateliers += '<li><strong>' + noms + ' :</strong> <a href="' + lien + '" target="_blank">' + lien + '</a></li>';
     }
+  }
 
-    function updateAll() {
-      const leconUrl = document.getElementById('selectLecon').value;
-      const leconLabel = leconUrl ? '<strong>Plan de leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a><br><br>' : '';
-      document.getElementById('lienLecon').innerHTML = leconUrl ? '<a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a>' : '';
+  const nomsGB = document.getElementById('nomsGB').value;
+  const lienGB = document.getElementById('exerciceGB').value;
+  document.getElementById('lienExerciceGB').innerHTML = lienGB ? '<a href="' + lienGB + '" target="_blank">' + lienGB + '</a>' : '';
+  let gardien = '';
+  if (nomsGB && lienGB) {
+    gardien = '<li><strong>' + nomsGB + ' (Gardien) :</strong> <a href="' + lienGB + '" target="_blank">' + lienGB + '</a></li>';
+  }
 
-      let ateliers = '';
-      for (let i = 1; i <= 5; i++) {
-        const noms = document.getElementById('noms' + i).value;
-        const lien = document.getElementById('exercice' + i).value;
-        const label = 'Atelier ' + i + ' : ';
-        document.getElementById('lienExercice' + i).innerHTML = lien ? '<a href="' + lien + '" target="_blank">' + lien + '</a>' : '';
-        if (noms && lien) {
-          ateliers += '<strong>' + label + noms + '</strong><br><a href="' + lien + '" target="_blank">' + lien + '</a><br><br>';
-        }
-      }
+  let msg = '<p>Bonjour à tous,</p>';
+  msg += '<p>Voici les informations pour la prochaine séance sur glace :</p>';
+  if (leconUrl) {
+    msg += '<p><strong>Leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a></p>';
+  }
+  msg += '<p><strong>Ateliers :</strong></p>';
+  msg += '<ul>' + ateliers + gardien + '</ul>';
+  msg += '<p>Merci de prendre connaissance de vos responsabilités avant la séance.</p>';
 
-      const nomsGB = document.getElementById('nomsGB').value;
-      const lienGB = document.getElementById('exerciceGB').value;
-      document.getElementById('lienExerciceGB').innerHTML = lienGB ? '<a href="' + lienGB + '" target="_blank">' + lienGB + '</a>' : '';
-      let gardien = '';
-      if (nomsGB && lienGB) {
-        gardien = '<strong>Gardiens de but : ' + nomsGB + '</strong><br><a href="' + lienGB + '" target="_blank">' + lienGB + '</a><br><br>';
-      }
-
-      let msg = '<p>Bonjour à tous,</p>';
-      msg += '<p>Voici les informations pour la prochaine séance sur glace :</p>';
-      msg += leconLabel;
-      msg += ateliers;
-      msg += gardien;
-      msg += '<p>Merci de prendre connaissance de vos responsabilités avant la séance.</p>';
-
-      document.getElementById('zoneMessage').innerHTML = msg;
-    }
-  </script>
+  document.getElementById('zoneMessage').innerHTML = msg;
+}
+</script>
 </body>
 </html>
