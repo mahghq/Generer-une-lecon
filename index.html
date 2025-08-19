@@ -865,7 +865,6 @@
 <h2>3. Message à copier-coller</h2>
 <div id="zoneMessage"></div>
 
-<script>
 function updateAll() {
   const leconUrl = document.getElementById('selectLecon').value;
   const leconLabel = leconUrl ? '<strong>Plan de leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a><br><br>' : '';
@@ -898,6 +897,8 @@ function updateAll() {
   msg += '<p>Merci de prendre connaissance de vos responsabilités avant la séance.</p>';
 
   document.getElementById('zoneMessage').innerHTML = msg;
+}
+
 }
 </script>
 </body>
