@@ -868,15 +868,17 @@
 <script>
 function updateAll() {
   const leconUrl = document.getElementById('selectLecon').value;
+  const leconLabel = leconUrl ? '<strong>Plan de leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a><br><br>' : '';
   document.getElementById('lienLecon').innerHTML = leconUrl ? '<a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a>' : '';
 
   let ateliers = '';
   for (let i = 1; i <= 5; i++) {
     const noms = document.getElementById('noms' + i).value;
     const lien = document.getElementById('exercice' + i).value;
+    const label = 'Atelier ' + i + ' : ';
     document.getElementById('lienExercice' + i).innerHTML = lien ? '<a href="' + lien + '" target="_blank">' + lien + '</a>' : '';
     if (noms && lien) {
-      ateliers += '<li><strong>' + noms + ' :</strong> <a href="' + lien + '" target="_blank">' + lien + '</a></li>';
+      ateliers += '<strong>' + label + noms + '</strong><br><a href="' + lien + '" target="_blank">' + lien + '</a><br><br>';
     }
   }
 
@@ -885,16 +887,14 @@ function updateAll() {
   document.getElementById('lienExerciceGB').innerHTML = lienGB ? '<a href="' + lienGB + '" target="_blank">' + lienGB + '</a>' : '';
   let gardien = '';
   if (nomsGB && lienGB) {
-    gardien = '<li><strong>' + nomsGB + ' (Gardien) :</strong> <a href="' + lienGB + '" target="_blank">' + lienGB + '</a></li>';
+    gardien = '<strong>Gardiens de but : ' + nomsGB + '</strong><br><a href="' + lienGB + '" target="_blank">' + lienGB + '</a><br><br>';
   }
 
   let msg = '<p>Bonjour à tous,</p>';
   msg += '<p>Voici les informations pour la prochaine séance sur glace :</p>';
-  if (leconUrl) {
-    msg += '<p><strong>Leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a></p>';
-  }
-  msg += '<p><strong>Ateliers :</strong></p>';
-  msg += '<ul>' + ateliers + gardien + '</ul>';
+  msg += leconLabel;
+  msg += ateliers;
+  msg += gardien;
   msg += '<p>Merci de prendre connaissance de vos responsabilités avant la séance.</p>';
 
   document.getElementById('zoneMessage').innerHTML = msg;
@@ -902,3 +902,4 @@ function updateAll() {
 </script>
 </body>
 </html>
+
