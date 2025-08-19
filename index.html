@@ -159,7 +159,7 @@
     <div class="bloc">
       <h3>Atelier 1</h3>
       <label>Nom des entraîneurs :</label>
-      <input type="text" id="noms1" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <input type="text" id="noms1" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc" oninput="updateAll()">
       <label>Choisissez un exercice :</label>
       <select id="exercice1" onchange="updateAll()">
         <option value="">-- Sélectionner un exercice --</option>
@@ -290,7 +290,7 @@
     <div class="bloc">
       <h3>Atelier 2</h3>
       <label>Nom des entraîneurs :</label>
-      <input type="text" id="noms2" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <input type="text" id="noms2" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc" oninput="updateAll()">
       <label>Choisissez un exercice :</label>
       <select id="exercice2" onchange="updateAll()">
         <option value="">-- Sélectionner un exercice --</option>
@@ -421,7 +421,7 @@
     <div class="bloc">
       <h3>Atelier 3</h3>
       <label>Nom des entraîneurs :</label>
-      <input type="text" id="noms3" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <input type="text" id="noms3" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc" oninput="updateAll()">
       <label>Choisissez un exercice :</label>
       <select id="exercice3" onchange="updateAll()">
         <option value="">-- Sélectionner un exercice --</option>
@@ -552,7 +552,7 @@
     <div class="bloc">
       <h3>Atelier 4</h3>
       <label>Nom des entraîneurs :</label>
-      <input type="text" id="noms4" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <input type="text" id="noms4" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc" oninput="updateAll()">
       <label>Choisissez un exercice :</label>
       <select id="exercice4" onchange="updateAll()">
         <option value="">-- Sélectionner un exercice --</option>
@@ -683,7 +683,7 @@
     <div class="bloc">
       <h3>Atelier 5</h3>
       <label>Nom des entraîneurs :</label>
-      <input type="text" id="noms5" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc">
+      <input type="text" id="noms5" oninput="updateAll()" placeholder="Ex: Jean, Marie, Luc" oninput="updateAll()">
       <label>Choisissez un exercice :</label>
       <select id="exercice5" onchange="updateAll()">
         <option value="">-- Sélectionner un exercice --</option>
@@ -814,7 +814,7 @@
 <div class="bloc">
   <h3>Gardiens de but</h3>
   <label>Nom de l’entraîneur :</label>
-  <input type="text" id="nomsGB" oninput="updateAll()" placeholder="Ex: Mathieu">
+  <input type="text" id="nomsGB" oninput="updateAll()" placeholder="Ex: Mathieu" oninput="updateAll()">
   <label>Choisissez un exercice :</label>
   <select id="exerciceGB" onchange="updateAll()">
     <option value="">-- Sélectionner un exercice --</option>
@@ -865,19 +865,18 @@
 <h2>3. Message à copier-coller</h2>
 <div id="zoneMessage"></div>
 
+<script>
 function updateAll() {
   const leconUrl = document.getElementById('selectLecon').value;
-  const leconLabel = leconUrl ? '<strong>Plan de leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a><br><br>' : '';
   document.getElementById('lienLecon').innerHTML = leconUrl ? '<a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a>' : '';
 
   let ateliers = '';
   for (let i = 1; i <= 5; i++) {
     const noms = document.getElementById('noms' + i).value;
     const lien = document.getElementById('exercice' + i).value;
-    const label = 'Atelier ' + i + ' : ';
     document.getElementById('lienExercice' + i).innerHTML = lien ? '<a href="' + lien + '" target="_blank">' + lien + '</a>' : '';
     if (noms && lien) {
-      ateliers += '<strong>' + label + noms + '</strong><br><a href="' + lien + '" target="_blank">' + lien + '</a><br><br>';
+      ateliers += '<li><strong>' + noms + ' :</strong> <a href="' + lien + '" target="_blank">' + lien + '</a></li>';
     }
   }
 
@@ -886,21 +885,20 @@ function updateAll() {
   document.getElementById('lienExerciceGB').innerHTML = lienGB ? '<a href="' + lienGB + '" target="_blank">' + lienGB + '</a>' : '';
   let gardien = '';
   if (nomsGB && lienGB) {
-    gardien = '<strong>Gardiens de but : ' + nomsGB + '</strong><br><a href="' + lienGB + '" target="_blank">' + lienGB + '</a><br><br>';
+    gardien = '<li><strong>' + nomsGB + ' (Gardien) :</strong> <a href="' + lienGB + '" target="_blank">' + lienGB + '</a></li>';
   }
 
   let msg = '<p>Bonjour à tous,</p>';
   msg += '<p>Voici les informations pour la prochaine séance sur glace :</p>';
-  msg += leconLabel;
-  msg += ateliers;
-  msg += gardien;
+  if (leconUrl) {
+    msg += '<p><strong>Leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a></p>';
+  }
+  msg += '<p><strong>Ateliers :</strong></p>';
+  msg += '<ul>' + ateliers + gardien + '</ul>';
   msg += '<p>Merci de prendre connaissance de vos responsabilités avant la séance.</p>';
 
   document.getElementById('zoneMessage').innerHTML = msg;
 }
-
-}
 </script>
 </body>
 </html>
-
