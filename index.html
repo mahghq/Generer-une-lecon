@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,58 +18,25 @@
   <label>Choisir une leçon</label>
   <select id="selectLecon" onchange="updateAll()">
     <option value="">Sélectionner une leçon</option>
-    <option value="https://www.exemple.com/plan1">Plan EM - Leçon 1</option>
-    <option value="https://www.exemple.com/plan2">Plan EM - Leçon 2</option>
+    <option value="https://media.publicationsports.com/509/1f063ee3-1665-6c68-a685-0242ac120003">Plan EM - MAHG 1 - Leçon 1</option>
+    <option value="https://media.publicationsports.com/509/1f063ee5-8296-634a-a0b3-0242ac120003">Plan EM - MAHG 1 - Leçon 2</option>
+    <option value="https://media.publicationsports.com/509/1f063ee6-30a1-6c50-921a-0242ac120003">Plan EM - MAHG 1 - Leçon 3</option>
+    <option value="https://media.publicationsports.com/509/1f063ee6-c8bb-6004-ab64-0242ac120003">Plan EM - MAHG 1 - Leçon 4</option>
   </select>
   <p id="lienLecon"></p>
 
   <!-- Ateliers 1 à 5 -->
-  <div id="ateliers">
-    <label>Atelier 1 – Noms des entraîneurs</label>
-    <input type="text" id="noms1" oninput="updateAll()">
-    <select id="exercice1" onchange="updateAll()">
-      <option value="">Sélectionner un exercice</option>
-      <option value="https://www.exemple.com/ex1">#1 - Slalom rapide</option>
-      <option value="https://www.exemple.com/ex2">#2 - Tire et suit</option>
-    </select>
-    <p id="lienExercice1"></p>
-
-    <label>Atelier 2 – Noms des entraîneurs</label>
-    <input type="text" id="noms2" oninput="updateAll()">
-    <select id="exercice2" onchange="updateAll()">
-      <option value="">Sélectionner un exercice</option>
-      <option value="https://www.exemple.com/ex3">#3 - Contrôle rondelle</option>
-    </select>
-    <p id="lienExercice2"></p>
-
-    <label>Atelier 3 – Noms des entraîneurs</label>
-    <input type="text" id="noms3" oninput="updateAll()">
-    <select id="exercice3" onchange="updateAll()">
-      <option value="">Sélectionner un exercice</option>
-    </select>
-    <p id="lienExercice3"></p>
-
-    <label>Atelier 4 – Noms des entraîneurs</label>
-    <input type="text" id="noms4" oninput="updateAll()">
-    <select id="exercice4" onchange="updateAll()">
-      <option value="">Sélectionner un exercice</option>
-    </select>
-    <p id="lienExercice4"></p>
-
-    <label>Atelier 5 – Noms des entraîneurs</label>
-    <input type="text" id="noms5" oninput="updateAll()">
-    <select id="exercice5" onchange="updateAll()">
-      <option value="">Sélectionner un exercice</option>
-    </select>
-    <p id="lienExercice5"></p>
-  </div>
+  <div id="ateliers"></div>
 
   <!-- Section gardiens -->
   <label>Gardiens de but – Noms des entraîneurs</label>
   <input type="text" id="nomsGB" oninput="updateAll()">
   <select id="exerciceGB" onchange="updateAll()">
     <option value="">Sélectionner un exercice</option>
-    <option value="https://www.exemple.com/gb1">GB - Réaction rapide</option>
+    <option value="https://media.publicationsports.com/509/1f063ea6-4239-6502-ac15-0242ac120003">GB - Leçon 1</option>
+    <option value="https://media.publicationsports.com/509/1f063ea7-0236-65da-b109-0242ac120003">GB - Leçon 2</option>
+    <option value="https://media.publicationsports.com/509/1f063ea7-9291-64ea-bb9a-0242ac120003">GB - Leçon 3</option>
+    <option value="https://media.publicationsports.com/509/1f063ea8-27f6-6d6e-bd47-0242ac120003">GB - Leçon 4</option>
   </select>
   <p id="lienExerciceGB"></p>
 
@@ -76,6 +44,27 @@
   <div id="zoneMessage"></div>
 
   <script>
+    const exercicesOptions = `
+<option value="https://media.publicationsports.com/509/1f060da4-46be-625e-bbbb-0242ac120003">#00-Eval - Exercice d’évaluation MAHG 0</option>
+<option value="https://media.publicationsports.com/509/1f060da6-f28b-6c2e-9315-0242ac120003">#01-Eval - Évaluation MAHG 1</option>
+<option value="https://media.publicationsports.com/509/1f060da7-a46c-675c-9ad4-0242ac120003">#02-Eval - Évaluation MAHG 2</option>
+`;
+
+    for (let i = 1; i <= 5; i++) {
+      const container = document.getElementById("ateliers");
+      const section = document.createElement("div");
+      section.innerHTML = `
+        <label>Atelier ${i} – Noms des entraîneurs</label>
+        <input type="text" id="noms${i}" oninput="updateAll()">
+        <select id="exercice${i}" onchange="updateAll()">
+          <option value="">Sélectionner un exercice</option>
+          ${exercicesOptions}
+        </select>
+        <p id="lienExercice${i}"></p>
+      `;
+      container.appendChild(section);
+    }
+
     function updateAll() {
       const leconUrl = document.getElementById('selectLecon').value;
       const leconLabel = leconUrl ? '<strong>Plan de leçon :</strong> <a href="' + leconUrl + '" target="_blank">' + leconUrl + '</a><br><br>' : '';
